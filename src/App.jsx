@@ -27,6 +27,20 @@ import AddLead from './pages/AddLead';
 import ImportLeads from './pages/ImportLeads';
 import Activities from './pages/Activities';
 import UnderConstruction from './pages/UnderConstruction';
+import WebsiteLeads from './pages/WebsiteLeads';
+import FacebookLeads from './pages/FacebookLeads';
+import OldLeads from './pages/OldLeads';
+import Campaigns from './pages/Campaigns';
+import AllLeads from './pages/AllLeads';
+import MyLeads from './pages/MyLeads';
+import AssignedLeads from './pages/AssignedLeads';
+import DailyReport from './pages/DailyReport';
+import WhatsappLeads from './pages/WhatsappLeads';
+import MyLists from './pages/MyLists';
+import Leaderboard from './pages/Leaderboard';
+import CallReport from './pages/CallReport';
+import ReportDownload from './pages/ReportDownload';
+import AllDuplicates from './pages/AllDuplicates';
 
 
 
@@ -44,9 +58,21 @@ function App() {
         <Route path="/activities" element={<Activities />} />
         {/* Placeholder Routes redirected to Under Construction */}
         <Route path="/under-construction" element={<UnderConstruction />} />
-        <Route path="/campaigns" element={<UnderConstruction />} />
+        <Route path="/website-leads" element={<WebsiteLeads />} />
+        <Route path="/facebook-leads" element={<FacebookLeads />} />
+        <Route path="/old-leads" element={<OldLeads />} />
+        <Route path="/campaigns" element={<Campaigns />} />
+        <Route path="/all-leads" element={<AllLeads />} />
+        <Route path="/my-leads" element={<MyLeads />} />
+        <Route path="/assigned-leads" element={<AssignedLeads />} />
+        <Route path="/daily-report" element={<DailyReport />} />
+        <Route path="/whatsapp-leads" element={<WhatsappLeads />} />
         <Route path="/filters" element={<UnderConstruction />} />
-        <Route path="/my-lists" element={<UnderConstruction />} />
+        <Route path="/my-lists" element={<MyLists />} />
+        <Route path="/leaderboard" element={<Leaderboard />} />
+        <Route path="/call-report" element={<CallReport />} />
+        <Route path="/report-download" element={<ReportDownload />} />
+        <Route path="/all-duplicates" element={<AllDuplicates />} />
         <Route path="/reports" element={<UnderConstruction />} />
 
         <Route path="/automations" element={<UnderConstruction />} /> {/* Fallback if not Workflows */}
