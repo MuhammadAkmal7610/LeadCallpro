@@ -40,7 +40,7 @@ export default function MyLists() {
                                 <h1 className="text-2xl font-bold text-gray-900 tracking-tight">My Lists</h1>
                                 <p className="text-sm text-gray-500 mt-1">Organize and manage your custom lead collections.</p>
                             </div>
-                            <button className="flex items-center gap-2 px-4 py-2 bg-[#08A698] hover:bg-[#078F82] text-white rounded-lg shadow-md hover:shadow-lg transition-all text-sm font-semibold">
+                            <button className="flex items-center gap-2 px-5 py-2.5 bg-primary hover:bg-secondary text-white rounded-xl shadow-md hover:shadow-lg transition-all text-sm font-semibold">
                                 <PlusIcon className="w-5 h-5" /> Create New List
                             </button>
                         </div>
@@ -51,7 +51,7 @@ export default function MyLists() {
                             <input
                                 type="text"
                                 placeholder="Search your lists..."
-                                className="w-full pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-xl text-sm outline-none focus:border-[#08A698] focus:ring-1 focus:ring-[#08A698] transition-all shadow-sm placeholder-gray-400"
+                                className="w-full pl-10 pr-4 py-3 bg-white border border-gray-200 rounded-xl text-sm outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all shadow-sm placeholder-gray-400"
                             />
                         </div>
 
@@ -60,7 +60,7 @@ export default function MyLists() {
                             {mockLists.map((list) => (
                                 <div key={list.id} className="bg-white rounded-xl border border-gray-200 p-6 shadow-sm hover:shadow-md hover:border-teal-200 transition-all duration-300 group cursor-pointer relative overflow-hidden flex flex-col">
                                     <div className={`absolute top-4 right-4 opacity-0 group-hover:opacity-100 transition-opacity flex gap-2`}>
-                                        <button className="p-1.5 text-gray-400 hover:text-[#08A698] bg-white rounded-lg shadow-sm border border-gray-100 hover:border-[#08A698] transition-colors">
+                                        <button className="p-1.5 text-gray-400 hover:text-primary bg-white rounded-lg shadow-sm border border-gray-100 hover:border-primary transition-colors">
                                             <PencilSquareIcon className="w-4 h-4" />
                                         </button>
                                         <button className="p-1.5 text-gray-400 hover:text-red-600 bg-white rounded-lg shadow-sm border border-gray-100 hover:border-red-200 transition-colors">
@@ -73,7 +73,7 @@ export default function MyLists() {
                                             <UserGroupIcon className="w-6 h-6" />
                                         </div>
                                         <div>
-                                            <h3 className="font-bold text-gray-800 text-lg leading-tight group-hover:text-[#08A698] transition-colors">{list.name}</h3>
+                                            <h3 className="font-bold text-gray-800 text-lg leading-tight group-hover:text-primary transition-colors">{list.name}</h3>
                                             <p className="text-xs text-gray-400 font-medium flex items-center gap-1 mt-1">
                                                 <CalendarIcon className="w-3.5 h-3.5" /> Created {list.createdOn}
                                             </p>
@@ -89,7 +89,7 @@ export default function MyLists() {
                                             <span className="text-2xl font-bold text-gray-900 tracking-tight">{list.count.toLocaleString()}</span>
                                             <span className="text-[10px] font-bold text-gray-400 uppercase tracking-wider bg-gray-50 px-1.5 py-0.5 rounded">Leads</span>
                                         </div>
-                                        <button className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-50 text-gray-400 group-hover:bg-[#08A698] group-hover:text-white transition-colors">
+                                        <button className="flex items-center justify-center w-8 h-8 rounded-full bg-gray-50 text-gray-400 group-hover:bg-primary group-hover:text-white transition-colors">
                                             <ArrowRightIcon className="w-4 h-4" />
                                         </button>
                                     </div>
@@ -97,11 +97,11 @@ export default function MyLists() {
                             ))}
 
                             {/* Create New Placeholder Card */}
-                            <button className="bg-gray-50/30 rounded-xl border-2 border-dashed border-gray-200 p-6 flex flex-col items-center justify-center text-center hover:border-[#08A698] hover:bg-teal-50/10 transition-colors group">
-                                <div className="w-14 h-14 rounded-full bg-white border border-gray-200 flex items-center justify-center mb-4 group-hover:border-[#08A698] transition-all shadow-sm group-hover:scale-110 duration-200">
-                                    <PlusIcon className="w-7 h-7 text-gray-400 group-hover:text-[#08A698]" />
+                            <button className="bg-gray-50/30 rounded-xl border-2 border-dashed border-gray-200 p-6 flex flex-col items-center justify-center text-center hover:border-primary hover:bg-teal-50/10 transition-colors group">
+                                <div className="w-14 h-14 rounded-full bg-white border border-gray-200 flex items-center justify-center mb-4 group-hover:border-primary transition-all shadow-sm group-hover:scale-110 duration-200">
+                                    <PlusIcon className="w-7 h-7 text-gray-400 group-hover:text-primary" />
                                 </div>
-                                <h3 className="font-bold text-gray-600 group-hover:text-[#08A698] text-lg">Create New List</h3>
+                                <h3 className="font-bold text-gray-600 group-hover:text-primary text-lg">Create New List</h3>
                                 <p className="text-sm text-gray-400 mt-1">Start a new collection</p>
                             </button>
 

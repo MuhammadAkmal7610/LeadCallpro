@@ -8,13 +8,14 @@ import {
     DocumentArrowUpIcon, UserIcon, ArrowPathRoundedSquareIcon, CalendarIcon, ClipboardDocumentListIcon, CodeBracketIcon,
     TrophyIcon, ArrowDownTrayIcon, DocumentDuplicateIcon, // New imports for Reports
     UserGroupIcon, IdentificationIcon, ClipboardDocumentCheckIcon, ChatBubbleLeftRightIcon, // New imports for Filters
-    GlobeAltIcon, CursorArrowRaysIcon, ArchiveBoxIcon, Squares2X2Icon // New imports for Campaigns
+    GlobeAltIcon, CursorArrowRaysIcon, ArchiveBoxIcon, Squares2X2Icon, ViewColumnsIcon // New imports for Campaigns
 } from '@heroicons/react/24/outline';
 import Logo from '../assets/Logo.svg';
 
 const navigation = [
 
     { name: 'Dashboard', icon: PresentationChartLineIcon, path: '/dashboard' },
+    { name: 'Pipeline', icon: ViewColumnsIcon, path: '/pipeline' }, // Core feature added
     { name: 'Search', icon: MagnifyingGlassIcon, path: '/search' }, // Assuming search path, logic was missing before
     { name: 'Add Leads', icon: UserPlusIcon, path: '/add-leads' },
     { name: 'Activities', icon: ListBulletIcon, path: '/activities' },

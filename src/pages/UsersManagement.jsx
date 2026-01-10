@@ -539,7 +539,7 @@ export default function UsersManagement() {
 
     const users = [
         { id: 1, name: 'Aiman Fatima', email: 'aiman@salesrep.in', initials: 'AF', color: 'bg-purple-100 text-purple-600', role: 'Caller', roleType: 'caller', status: 'Working', permission: 'Default Caller Permissions', expiry: '30 Dec 2025', license: 'Whatsapp Chat Sync' },
-        { id: 2, name: 'Amrat', email: 'Amrat@Salesrep.in', initials: 'AM', color: 'bg-indigo-100 text-indigo-600', role: 'Caller', roleType: 'caller', status: 'Working', permission: 'Default Caller Permissions', expiry: '2 Jan 2026', license: 'Whatsapp Chat Sync' },
+        { id: 2, name: 'Amrat', email: 'Amrat@Salesrep.in', initials: 'AM', color: 'bg-teal-100 text-teal-600', role: 'Caller', roleType: 'caller', status: 'Working', permission: 'Default Caller Permissions', expiry: '2 Jan 2026', license: 'Whatsapp Chat Sync' },
         { id: 3, name: 'Aysha Younas', email: 'Aysha2@Salesrep.in', initials: 'AY', color: 'bg-blue-100 text-blue-600', role: 'Caller', roleType: 'caller', status: 'On Leave', permission: 'Default Caller Permissions', expiry: '30 Dec 2025', license: 'Whatsapp Chat Sync' },
         { id: 4, name: 'Eman', email: 'Eman@Salesrep.in', initials: 'EM', color: 'bg-pink-100 text-pink-600', role: 'Caller', roleType: 'caller', status: 'Working', permission: 'Default Caller Permissions', expiry: '2 Jan 2026', license: 'Whatsapp Chat Sync' },
         { id: 5, name: 'Eon Holding', email: 'eonholdings.pk@gmail.com', initials: 'EH', color: 'bg-orange-100 text-orange-600', role: 'Root', roleType: 'root', status: 'Invited', permission: 'Default Root Permissions', expiry: '2 Feb 2026', license: 'Whatsapp Chat Sync' },

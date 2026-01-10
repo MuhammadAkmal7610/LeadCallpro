@@ -41,6 +41,7 @@ import Leaderboard from './pages/Leaderboard';
 import CallReport from './pages/CallReport';
 import ReportDownload from './pages/ReportDownload';
 import AllDuplicates from './pages/AllDuplicates';
+import Pipeline from './pages/Pipeline';
 
 
 
@@ -98,6 +99,7 @@ function App() {
         <Route path="/salesforms" element={<Salesforms />} />
         <Route path="/schedules" element={<Schedules />} />
         <Route path="/workflows" element={<Workflows />} />
+        <Route path="/pipeline" element={<Pipeline />} />
         <Route path="/add-lead" element={<AddLead />} />
         <Route path="/import-leads" element={<ImportLeads />} />
         <Route path="/dashboard" element={<Dashboard />} />

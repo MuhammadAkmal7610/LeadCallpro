@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import FilterPageTemplate from '../components/FilterPageTemplate';
+import LeadDetailModal from '../components/LeadDetailModal';
 
 const mockData = [
     { id: 1, name: 'Junaid Warsi', status: 'Fresh', rating: 0, assigneeInitials: 'EA', assigneeName: 'Esha Aftab', createdOn: '6m ago', modifiedOn: '6m ago', source: 'Meta' },
@@ -17,5 +18,36 @@ const mockData = [
 ];
 
 export default function AllLeads() {
-    return <FilterPageTemplate title="All Leads" data={mockData} />;
+    const [selectedLead, setSelectedLead] = useState(null);
+    const [isModalOpen, setIsModalOpen] = useState(false);
+
+    const handleRowClick = (lead) => {
+        // Map data to match simpler modal expectation if needed, or update modal to handle this structure
+        // The modal expects { name, phone, assignee, time, id }
+        // We have assigneeName, modifiedOn, etc.
+        const mappedLead = {
+            id: lead.id,
+            name: lead.name,
+            phone: lead.phone || '923001234567', // Mock phone if missing in this data
+            assignee: lead.assigneeName,
+            time: lead.modifiedOn
+        };
+        setSelectedLead(mappedLead);
+        setIsModalOpen(true);
+    };
+
+    return (
+        <>
+            <FilterPageTemplate
+                title="All Leads"
+                data={mockData}
+                onRowClick={handleRowClick}
+            />
+            <LeadDetailModal
+                isOpen={isModalOpen}
+                onClose={() => setIsModalOpen(false)}
+                lead={selectedLead}
+            />
+        </>
+    );
 }

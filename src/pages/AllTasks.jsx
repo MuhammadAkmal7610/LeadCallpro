@@ -274,7 +274,7 @@ const AllTasks = () => {
                                                 {[
                                                     { name: 'Esha Aftab', role: 'Caller', initials: 'EA', color: 'bg-purple-100 text-purple-600' },
                                                     { name: 'Minahil', role: 'Caller', initials: 'MI', color: 'bg-blue-100 text-blue-600' },
-                                                    { name: 'Masfa', role: 'Caller', initials: 'MA', color: 'bg-indigo-100 text-indigo-600' },
+                                                    { name: 'Masfa', role: 'Caller', initials: 'MA', color: 'bg-teal-100 text-teal-600' },
                                                     { name: 'Samaha', role: 'Caller', initials: 'SA', color: 'bg-pink-100 text-pink-600' },
                                                     { name: 'Laiba', role: 'Caller', initials: 'LA', color: 'bg-orange-100 text-orange-600' },
                                                     { name: 'Eman', role: 'Caller', initials: 'EM', color: 'bg-teal-100 text-teal-600' },
@@ -442,7 +442,7 @@ const AllTasks = () => {
                                                     {[
                                                         { name: 'Esha Aftab', role: 'Caller', initials: 'EA', color: 'bg-purple-100 text-purple-600' },
                                                         { name: 'Minahil', role: 'Caller', initials: 'MI', color: 'bg-blue-100 text-blue-600' },
-                                                        { name: 'Masfa', role: 'Caller', initials: 'MA', color: 'bg-indigo-100 text-indigo-600' },
+                                                        { name: 'Masfa', role: 'Caller', initials: 'MA', color: 'bg-teal-100 text-teal-600' },
                                                         { name: 'Samaha', role: 'Caller', initials: 'SA', color: 'bg-pink-100 text-pink-600' },
                                                         { name: 'Laiba', role: 'Caller', initials: 'LA', color: 'bg-orange-100 text-orange-600' },
                                                         { name: 'Eman', role: 'Caller', initials: 'EM', color: 'bg-teal-100 text-teal-600' },

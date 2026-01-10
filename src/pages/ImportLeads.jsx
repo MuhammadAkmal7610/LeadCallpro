@@ -35,24 +35,24 @@ export default function ImportLeads() {
                         <div className="flex items-center justify-between">
                             <div className="flex items-center gap-4">
                                 <div className="w-12 h-12 flex items-center justify-center bg-white border border-gray-200 rounded-xl shadow-sm">
-                                    <svg className="w-6 h-6 text-[#08A698]" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" /></svg>
+                                    <svg className="w-6 h-6 text-primary" fill="currentColor" viewBox="0 0 24 24"><path d="M14 2H6c-1.1 0-1.99.9-1.99 2L4 20c0 1.1.89 2 1.99 2H18c1.1 0 2-.9 2-2V8l-6-6zm2 16H8v-2h8v2zm0-4H8v-2h8v2zm-3-5V3.5L18.5 9H13z" /></svg>
                                 </div>
                                 <div>
                                     <h1 className="text-2xl font-bold text-gray-800 tracking-tight">Import Leads</h1>
                                     <p className="text-sm text-gray-500 mt-1">Bulk upload your leads via CSV or Excel</p>
                                 </div>
                             </div>
-                            <button className="text-[#08A698] bg-teal-50 hover:bg-teal-100 border border-teal-200 text-sm font-semibold transition-colors flex items-center gap-2 px-4 py-2 rounded-lg">
-                                <span className="w-4 h-4 bg-[#08A698] text-white rounded-full flex items-center justify-center text-[10px] font-bold">?</span>
+                            <button className="text-primary bg-teal-50 hover:bg-teal-100 border border-teal-200 text-sm font-semibold transition-colors flex items-center gap-2 px-4 py-2 rounded-lg">
+                                <span className="w-4 h-4 bg-primary text-white rounded-full flex items-center justify-center text-[10px] font-bold">?</span>
                                 How to upload?
                             </button>
                         </div>
 
                         {/* Upload Section */}
-                        <div className="bg-white rounded-xl border-2 border-dashed border-gray-300 hover:border-[#08A698] p-12 text-center relative overflow-hidden group transition-all duration-300 hover:shadow-lg cursor-pointer">
+                        <div className="bg-white rounded-xl border-2 border-dashed border-gray-300 hover:border-primary p-12 text-center relative overflow-hidden group transition-all duration-300 hover:shadow-lg cursor-pointer">
                             <div className="relative z-10 flex flex-col items-center justify-center">
                                 <div className="w-16 h-16 bg-teal-50 rounded-full flex items-center justify-center mb-6 group-hover:scale-110 transition-transform duration-300 ring-8 ring-teal-50/50 group-hover:ring-teal-100/50">
-                                    <CloudArrowUpIcon className="w-8 h-8 text-[#08A698]" />
+                                    <CloudArrowUpIcon className="w-8 h-8 text-primary" />
                                 </div>
                                 <h3 className="text-xl font-bold text-gray-800 mb-2">Click to upload .csv or .xlsx files</h3>
                                 <p className="text-sm text-gray-500 mb-8 max-w-sm mx-auto leading-relaxed">
@@ -64,7 +64,7 @@ export default function ImportLeads() {
                                     Select File
                                 </button>
 
-                                <button className="flex items-center gap-2 text-xs font-semibold text-gray-500 hover:text-[#08A698] transition-colors group/link">
+                                <button className="flex items-center gap-2 text-xs font-semibold text-gray-500 hover:text-primary transition-colors group/link">
                                     <DocumentArrowDownIcon className="w-4 h-4 group-hover/link:translate-y-0.5 transition-transform" />
                                     Download Sample Template
                                 </button>
@@ -79,7 +79,7 @@ export default function ImportLeads() {
                             <div className="flex justify-between items-center px-1">
                                 <h2 className="text-lg font-bold text-gray-800">Recent Imports</h2>
                                 <div className="flex gap-2">
-                                    <button className="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-xs font-medium text-gray-600 hover:bg-gray-50 hover:border-[#08A698] hover:text-[#08A698] transition-colors flex items-center gap-2 shadow-sm">
+                                    <button className="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-xs font-medium text-gray-600 hover:bg-gray-50 hover:border-primary hover:text-primary transition-colors flex items-center gap-2 shadow-sm">
                                         Date <span className="text-[10px]">▼</span>
                                     </button>
                                 </div>
@@ -148,8 +148,8 @@ export default function ImportLeads() {
                                 </div>
                             </div>
                         </div>
-
                     </div>
+
                 </main>
             </div>
         </div>

@@ -17,7 +17,7 @@ import { StarIcon } from '@heroicons/react/24/outline'; // Outline star for empt
 import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid'; // Solid star for filled rating
 
 
-export default function FilterPageTemplate({ title, data = [], showEmptyState = false }) {
+export default function FilterPageTemplate({ title, data = [], showEmptyState = false, onRowClick }) {
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
     return (
@@ -34,13 +34,13 @@ export default function FilterPageTemplate({ title, data = [], showEmptyState = 
                         <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-6">
                             <div className="flex items-center gap-2">
                                 <h1 className="text-2xl font-bold text-gray-900 tracking-tight">{title}</h1>
-                                <button className="p-1.5 rounded-full hover:bg-gray-100 text-gray-400 hover:text-[#08A698] transition-colors"><PencilSquareIcon className="w-4 h-4" /></button>
-                                <button className="p-1.5 rounded-full hover:bg-gray-100 text-gray-400 hover:text-[#08A698] transition-colors"><ArrowPathIcon className="w-4 h-4" /></button>
-                                <button className="p-1.5 rounded-full hover:bg-gray-100 text-gray-400 hover:text-[#08A698] transition-colors"><PlusIcon className="w-4 h-4" /></button>
+                                <button className="p-1.5 rounded-full hover:bg-gray-100 text-gray-400 hover:text-primary transition-colors"><PencilSquareIcon className="w-4 h-4" /></button>
+                                <button className="p-1.5 rounded-full hover:bg-gray-100 text-gray-400 hover:text-primary transition-colors"><ArrowPathIcon className="w-4 h-4" /></button>
+                                <button className="p-1.5 rounded-full hover:bg-gray-100 text-gray-400 hover:text-primary transition-colors"><PlusIcon className="w-4 h-4" /></button>
                             </div>
                             <div className="flex items-center gap-2 bg-white p-1 rounded-lg border border-gray-200 shadow-sm">
-                                <button className="p-1.5 text-gray-400 hover:text-gray-600 rounded-md hover:bg-gray-50"><div className="w-4 h-4 flex items-end gap-0.5"><div className="w-1 h-1.5 bg-current rounded-sm"></div><div className="w-1 h-2.5 bg-current rounded-sm"></div><div className="w-1 h-3.5 bg-current rounded-sm"></div></div></button>
-                                <button className="p-1.5 text-[#08A698] bg-teal-50 rounded-md shadow-sm ring-1 ring-black/5"><div className="w-4 h-4 flex flex-col gap-0.5"><div className="w-full h-0.5 bg-current rounded-full"></div><div className="w-full h-0.5 bg-current rounded-full"></div><div className="w-full h-0.5 bg-current rounded-full"></div></div></button>
+                                <button className="p-2 text-gray-400 hover:text-gray-600 rounded-md hover:bg-gray-50"><div className="w-4 h-4 flex items-end gap-0.5"><div className="w-1 h-1.5 bg-current rounded-sm"></div><div className="w-1 h-2.5 bg-current rounded-sm"></div><div className="w-1 h-3.5 bg-current rounded-sm"></div></div></button>
+                                <button className="p-2 text-primary bg-teal-50 rounded-md shadow-sm ring-1 ring-black/5"><div className="w-4 h-4 flex flex-col gap-0.5"><div className="w-full h-0.5 bg-current rounded-full"></div><div className="w-full h-0.5 bg-current rounded-full"></div><div className="w-full h-0.5 bg-current rounded-full"></div></div></button>
                             </div>
                         </div>
 
@@ -49,7 +49,7 @@ export default function FilterPageTemplate({ title, data = [], showEmptyState = 
                             <div className="flex-1 flex w-full md:w-auto">
                                 <div className="relative group w-full md:max-w-md">
                                     <div className="absolute left-0 top-0 bottom-0 flex items-center pl-3 pointer-events-none">
-                                        <MagnifyingGlassIcon className="w-4 h-4 text-gray-400 group-focus-within:text-[#08A698] transition-colors" />
+                                        <MagnifyingGlassIcon className="w-5 h-5 text-gray-400 group-focus-within:text-primary transition-colors" />
                                     </div>
                                     <div className="absolute left-9 top-1/2 -translate-y-1/2 text-xs text-gray-500 font-medium flex items-center gap-1 cursor-pointer hover:text-gray-700 bg-gray-50 px-2 py-1 rounded-md border border-gray-100"> Name <ChevronDownIcon className="w-3 h-3" /> </div>
                                     <input
@@ -68,9 +68,9 @@ export default function FilterPageTemplate({ title, data = [], showEmptyState = 
 
                         {/* Bulk Actions (Optional / Contextual) */}
                         <div className="flex items-center justify-end gap-2 mb-4">
-                            <button className="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-xs font-medium text-gray-600 hover:border-[#08A698] hover:text-[#08A698] flex items-center gap-1.5 transition-colors shadow-sm"><PencilSquareIcon className="w-3.5 h-3.5" /> Bulk Edit</button>
-                            <button className="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-xs font-medium text-gray-600 hover:border-[#08A698] hover:text-[#08A698] flex items-center gap-1.5 transition-colors shadow-sm"><ChatBubbleLeftRightIcon className="w-3.5 h-3.5" /> Bulk WACA Message</button>
-                            <button className="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-xs font-medium text-gray-600 hover:border-gray-300 flex items-center gap-1.5 transition-colors shadow-sm">More <ChevronDownIcon className="w-3 h-3" /></button>
+                            <button className="px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm font-medium text-gray-600 hover:border-primary hover:text-primary flex items-center gap-2 transition-colors shadow-sm"><PencilSquareIcon className="w-4 h-4" /> Bulk Edit</button>
+                            <button className="px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm font-medium text-gray-600 hover:border-primary hover:text-primary flex items-center gap-2 transition-colors shadow-sm"><ChatBubbleLeftRightIcon className="w-4 h-4" /> Bulk WACA Message</button>
+                            <button className="px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm font-medium text-gray-600 hover:border-gray-300 flex items-center gap-2 transition-colors shadow-sm">More <ChevronDownIcon className="w-4 h-4" /></button>
                         </div>
 
                         {/* Table Content */}
@@ -85,30 +85,34 @@ export default function FilterPageTemplate({ title, data = [], showEmptyState = 
                                 </div>
                             ) : (
                                 <>
-                                    <div className="flex items-center gap-2 p-3 border-b border-gray-100 text-xs text-gray-500 bg-gray-50/50">
-                                        <span className="bg-white border border-gray-200 rounded-md text-[10px] font-bold px-2 py-0.5 shadow-sm">1-20 of {data.length > 0 ? data.length + '024' : '0'}</span>
-                                        <ChevronDownIcon className="w-3 h-3" />
+                                    <div className="flex items-center gap-2 p-3 border-b border-gray-100 text-sm text-gray-500 bg-gray-50/50">
+                                        <span className="bg-white border border-gray-200 rounded-md text-xs font-bold px-2 py-1 shadow-sm">1-20 of {data.length > 0 ? data.length + '024' : '0'}</span>
+                                        <ChevronDownIcon className="w-4 h-4" />
                                     </div>
                                     <div className="overflow-x-auto">
                                         <table className="w-full text-left border-collapse">
                                             <thead>
                                                 <tr className="bg-gray-50/50 border-b border-gray-100">
-                                                    <th className="w-12 px-6 py-4"><input type="checkbox" className="rounded border-gray-300 text-[#08A698] focus:ring-[#08A698] cursor-pointer" /></th>
-                                                    <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Name</th>
-                                                    <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Status</th>
-                                                    <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Rating</th>
-                                                    <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Assignee</th>
-                                                    <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Created On</th>
-                                                    <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Modified On</th>
-                                                    <th className="px-6 py-4 text-xs font-bold text-gray-400 uppercase tracking-wider">Lead source</th>
+                                                    <th className="w-12 px-6 py-4"><input type="checkbox" className="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary cursor-pointer" /></th>
+                                                    <th className="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Name</th>
+                                                    <th className="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Status</th>
+                                                    <th className="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Rating</th>
+                                                    <th className="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Assignee</th>
+                                                    <th className="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Created On</th>
+                                                    <th className="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Modified On</th>
+                                                    <th className="px-6 py-4 text-xs font-bold text-gray-500 uppercase tracking-wider">Lead source</th>
                                                 </tr>
                                             </thead>
                                             <tbody className="divide-y divide-gray-50">
                                                 {data.map((lead) => (
-                                                    <tr key={lead.id} className="hover:bg-teal-50/30 transition-colors group cursor-pointer">
-                                                        <td className="px-6 py-4"><input type="checkbox" className="rounded border-gray-300 text-[#08A698] focus:ring-[#08A698] cursor-pointer" /></td>
+                                                    <tr
+                                                        key={lead.id}
+                                                        onClick={() => onRowClick && onRowClick(lead)}
+                                                        className="hover:bg-teal-50/30 transition-colors group cursor-pointer"
+                                                    >
+                                                        <td className="px-6 py-4" onClick={(e) => e.stopPropagation()}><input type="checkbox" className="w-4 h-4 rounded border-gray-300 text-primary focus:ring-primary cursor-pointer" /></td>
                                                         <td className="px-6 py-4">
-                                                            <span className="text-sm font-semibold text-gray-800 group-hover:text-[#08A698] transition-colors">{lead.name}</span>
+                                                            <span className="text-sm font-semibold text-gray-800 group-hover:text-primary transition-colors">{lead.name}</span>
                                                         </td>
                                                         <td className="px-6 py-4">
                                                             <StatusBadge status={lead.status} subStatus={lead.subStatus} />
@@ -118,7 +122,7 @@ export default function FilterPageTemplate({ title, data = [], showEmptyState = 
                                                         </td>
                                                         <td className="px-6 py-4">
                                                             <div className="flex items-center gap-2">
-                                                                <div className="w-6 h-6 rounded-full bg-gray-100 text-gray-600 flex items-center justify-center text-[10px] font-bold uppercase ring-1 ring-white shadow-sm">{lead.assigneeInitials}</div>
+                                                                <div className="w-8 h-8 rounded-full bg-gray-100 text-gray-600 flex items-center justify-center text-xs font-bold uppercase ring-1 ring-white shadow-sm">{lead.assigneeInitials}</div>
                                                                 <span className="text-xs font-medium text-gray-600">{lead.assigneeName}</span>
                                                             </div>
                                                         </td>
@@ -144,9 +148,9 @@ export default function FilterPageTemplate({ title, data = [], showEmptyState = 
 }
 
 const FilterPill = ({ label, icon: Icon }) => (
-    <button className="px-3 py-1.5 bg-white border border-gray-200 rounded-lg text-xs font-medium text-gray-500 hover:border-[#08A698] hover:text-[#08A698] flex items-center gap-1.5 whitespace-nowrap shadow-sm transition-all group">
-        {Icon && <Icon className="w-3.5 h-3.5 text-gray-400 group-hover:text-[#08A698] transition-colors" />}
-        {label} <ChevronDownIcon className="w-3 h-3 text-gray-300 group-hover:text-[#08A698] transition-colors" />
+    <button className="px-4 py-2 bg-white border border-gray-200 rounded-lg text-sm font-medium text-gray-500 hover:border-primary hover:text-primary flex items-center gap-2 whitespace-nowrap shadow-sm transition-all group">
+        {Icon && <Icon className="w-4 h-4 text-gray-400 group-hover:text-primary transition-colors" />}
+        {label} <ChevronDownIcon className="w-4 h-4 text-gray-300 group-hover:text-primary transition-colors" />
     </button>
 );
 

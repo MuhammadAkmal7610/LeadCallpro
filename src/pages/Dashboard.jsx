@@ -199,7 +199,7 @@ const Dashboard = () => {
                                                 <tr key={i} className="group hover:bg-teal-50/30 transition-colors">
                                                     <td className="py-3 pl-1">
                                                         <div className="flex items-center gap-3">
-                                                            <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 border border-indigo-100 flex items-center justify-center text-[10px] font-bold shadow-sm">{r.i}</div>
+                                                            <div className="w-8 h-8 rounded-lg bg-teal-50 text-[#08A698] border border-teal-100 flex items-center justify-center text-[10px] font-bold shadow-sm">{r.i}</div>
                                                             <span className="text-gray-700 font-semibold group-hover:text-[#08A698] transition-colors">{r.name}</span>
                                                         </div>
                                                     </td>
@@ -238,7 +238,7 @@ const Dashboard = () => {
                                                 <tr key={i} className="group hover:bg-teal-50/30 transition-colors">
                                                     <td className="py-3 pl-1">
                                                         <div className="flex items-center gap-3">
-                                                            <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 border border-indigo-100 flex items-center justify-center text-[10px] font-bold shadow-sm">{r.i}</div>
+                                                            <div className="w-8 h-8 rounded-lg bg-teal-50 text-[#08A698] border border-teal-100 flex items-center justify-center text-[10px] font-bold shadow-sm">{r.i}</div>
                                                             <span className="text-gray-700 font-semibold group-hover:text-[#08A698] transition-colors">{r.n}</span>
                                                         </div>
                                                     </td>
@@ -318,7 +318,7 @@ const Dashboard = () => {
                                                 <tr key={i} className="group hover:bg-teal-50/30 transition-colors">
                                                     <td className="py-3 pl-1">
                                                         <div className="flex items-center gap-3">
-                                                            <div className="w-8 h-8 rounded-lg bg-indigo-50 text-indigo-600 border border-indigo-100 flex items-center justify-center text-[10px] font-bold shadow-sm">{r.i}</div>
+                                                            <div className="w-8 h-8 rounded-lg bg-teal-50 text-[#08A698] border border-teal-100 flex items-center justify-center text-[10px] font-bold shadow-sm">{r.i}</div>
                                                             <span className="text-gray-700 font-semibold group-hover:text-[#08A698] transition-colors">{r.n}</span>
                                                         </div>
                                                     </td>
@@ -341,8 +341,8 @@ const Dashboard = () => {
                             {/* Card 5: Campaigns */}
                             <DashboardCard icon={MegaphoneIcon} title="Calling Campaigns" onAdd={() => { }} className="h-[400px] border-dashed border-2 hover:border-[#08A698]">
                                 <div className="flex-1 flex flex-col items-center justify-center text-center p-8 space-y-6">
-                                    <div className="w-20 h-20 bg-indigo-50 rounded-full flex items-center justify-center shadow-inner">
-                                        <MegaphoneIcon className="w-10 h-10 text-indigo-500" />
+                                    <div className="w-20 h-20 bg-teal-50 rounded-full flex items-center justify-center shadow-inner">
+                                        <MegaphoneIcon className="w-10 h-10 text-[#08A698]" />
                                     </div>
 
                                     <div className="space-y-2 max-w-xs mx-auto">
@@ -350,7 +350,7 @@ const Dashboard = () => {
                                         <p className="text-gray-500 text-sm">We are enhancing the campaign experience. Check back soon.</p>
                                     </div>
 
-                                    <button className="px-6 py-2.5 bg-[#4338CA] text-white rounded-lg text-sm font-bold hover:bg-[#3730A3] transition-all shadow-lg shadow-indigo-200 hover:shadow-indigo-300 transform hover:-translate-y-0.5">
+                                    <button className="px-6 py-2.5 bg-[#08A698] text-white rounded-lg text-sm font-bold hover:bg-[#078F82] transition-all shadow-lg shadow-teal-200 hover:shadow-teal-300 transform hover:-translate-y-0.5">
                                         Go to Campaigns
                                     </button>
                                 </div>

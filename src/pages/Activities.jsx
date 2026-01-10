@@ -121,10 +121,10 @@ export default function Activities() {
                                     <input
                                         type="text"
                                         placeholder="Search activities..."
-                                        className="pl-9 pr-4 py-2 bg-white border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-[#08A698] w-full sm:w-64 transition-shadow shadow-sm"
+                                        className="pl-10 pr-4 py-2.5 bg-white border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary w-full sm:w-72 transition-all shadow-sm"
                                     />
                                 </div>
-                                <button className="p-2 bg-white border border-gray-200 rounded-lg text-gray-500 hover:text-[#08A698] hover:border-teal-200 transition-colors shadow-sm">
+                                <button className="p-2.5 bg-white border border-gray-200 rounded-lg text-gray-500 hover:text-primary hover:border-primary transition-colors shadow-sm">
                                     <FunnelIcon className="w-5 h-5" />
                                 </button>
                             </div>
@@ -140,9 +140,9 @@ export default function Activities() {
                                     {/* Date Label */}
                                     <div className="flex items-center gap-4 mb-4">
                                         <div className="w-[54px] hidden sm:flex justify-center">
-                                            <div className="w-2.5 h-2.5 rounded-full bg-gray-300 ring-4 ring-[#F8F9FA]"></div>
+                                            <div className="w-3 h-3 rounded-full bg-gray-300 ring-4 ring-[#F8F9FA]"></div>
                                         </div>
-                                        <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider bg-[#F8F9FA] pr-2 z-10">{group.date}</h3>
+                                        <h3 className="text-xs font-bold text-gray-400 uppercase tracking-wider bg-[#F8F9FA] pr-2 z-10">{group.date}</h3>
                                     </div>
 
                                     <div className="space-y-4">
@@ -163,14 +163,14 @@ export default function Activities() {
                                                                 <h4 className="text-sm font-bold text-gray-900">{item.title} <span className="font-normal text-gray-500 mx-1">•</span> <span className="font-medium text-gray-700">{item.subtitle}</span></h4>
                                                                 <p className="text-sm text-gray-600 mt-1 leading-relaxed">{item.description}</p>
                                                             </div>
-                                                            <div className="flex items-center text-xs text-gray-400 gap-1 whitespace-nowrap">
-                                                                <ClockIcon className="w-3.5 h-3.5" />
+                                                            <div className="flex items-center text-xs text-gray-500 gap-1.5 whitespace-nowrap font-medium">
+                                                                <ClockIcon className="w-4 h-4" />
                                                                 {item.time}
                                                             </div>
                                                         </div>
 
-                                                        <div className="flex items-center gap-3 mt-3">
-                                                            <div className="flex items-center gap-1.5 text-xs font-medium text-gray-500 bg-gray-50 px-2 py-1 rounded-md border border-gray-100">
+                                                        <div className="flex items-center gap-3 mt-4">
+                                                            <div className="flex items-center gap-2 text-xs font-medium text-gray-600 bg-gray-100 px-2.5 py-1 rounded-md border border-gray-200">
                                                                 <UserCircleIcon className="w-3.5 h-3.5" />
                                                                 {item.user}
                                                             </div>

@@ -3,6 +3,7 @@ import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 import ActionCard from '../components/ActionCard';
 import IntegrationCard from '../components/IntegrationCard';
+import Logo from '../assets/Logo.svg';
 import {
     UserPlusIcon, DocumentArrowUpIcon, SignalIcon,
     PresentationChartLineIcon, AdjustmentsHorizontalIcon,
@@ -10,6 +11,7 @@ import {
     ShoppingCartIcon, ChatBubbleLeftRightIcon, BoltIcon,
     RectangleStackIcon, DevicePhoneMobileIcon
 } from '@heroicons/react/24/outline';
+import { StarIcon as StarIconSolid } from '@heroicons/react/24/solid';
 
 // SVG Logos
 const FacebookLogo = () => (
@@ -119,29 +121,45 @@ export default function Home() {
                             {/* Right Sidebar (1 Col) */}
                             <div className="space-y-6 xl:mt-0">
 
-                                {/* Download App Widget */}
-                                <div className="bg-gradient-to-br from-gray-900 to-gray-800 rounded-2xl shadow-lg p-6 text-white relative overflow-hidden group">
-                                    {/* Background Pattern */}
-                                    <div className="absolute top-0 right-0 p-4 opacity-10">
-                                        <DevicePhoneMobileIcon className="w-32 h-32 transform rotate-12 text-white" />
+                                {/* Authentic Play Store Listing Card */}
+                                <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-5 overflow-hidden">
+                                    <div className="flex gap-4 mb-4">
+                                        <div className="w-16 h-16 rounded-lg bg-teal-50 border border-teal-100 flex-shrink-0 flex items-center justify-center overflow-hidden">
+                                            <img src={Logo} alt="AnyLead" className="w-12 h-12 object-contain" />
+                                        </div>
+                                        <div className="flex-1 min-w-0">
+                                            <h3 className="font-bold text-gray-900 text-lg leading-tight truncate">AnyLead CRM</h3>
+                                            <p className="text-[#01875f] text-xs font-semibold mt-0.5">AnyLead Inc.</p>
+                                            <p className="text-[11px] text-gray-500 mt-0.5">Business</p>
+                                        </div>
                                     </div>
 
-                                    <div className="relative z-10">
-                                        <div className="w-12 h-12 bg-white/10 backdrop-blur-sm rounded-xl flex items-center justify-center mb-4 border border-white/10">
-                                            <DevicePhoneMobileIcon className="w-6 h-6 text-[#08A698]" />
-                                        </div>
-
-                                        <h3 className="text-lg font-bold mb-2">Get the Mobile App</h3>
-                                        <p className="text-gray-300 text-sm mb-6 leading-relaxed">
-                                            Access your leads and track progress on the go.
-                                        </p>
-
-                                        <button className="w-full bg-white text-gray-900 hover:bg-gray-50 px-4 py-3 rounded-xl text-sm font-bold transition-all flex items-center justify-center gap-3 shadow-sm hover:shadow-md">
-                                            <div className="w-5 h-5">
-                                                <svg viewBox="0 0 512 512" fill="currentColor"><path d="M325.3 234.3L104.6 13l280.8 161.2-60.1 60.1zM47 0C34 6.8 25.3 19.2 25.3 35.3v441.3c0 16.1 8.7 28.5 21.7 35.3l256.6-256L47 0zm425.2 225.6l-58.9-34.1-65.7 64.5 65.7 64.5 60.1-34.1c18-14.3 18-46.5-1.2-60.8zM104.6 499l280.8-161.2-60.1-60.1L104.6 499z" /></svg>
+                                    {/* Stats Row */}
+                                    <div className="flex items-center justify-between mb-5 px-1">
+                                        <div className="flex flex-col items-center gap-0.5 border-r border-gray-100 pr-4 flex-1">
+                                            <div className="flex items-center gap-1 font-bold text-gray-700 text-xs">
+                                                4.8 <StarIconSolid className="w-3 h-3 pb-0.5" />
                                             </div>
-                                            <span>Google Play</span>
-                                        </button>
+                                            <span className="text-[10px] text-gray-500">2K reviews</span>
+                                        </div>
+                                        <div className="flex flex-col items-center gap-0.5 border-r border-gray-100 px-4 flex-1">
+                                            <span className="font-bold text-gray-700 text-xs">10K+</span>
+                                            <span className="text-[10px] text-gray-500">Downloads</span>
+                                        </div>
+                                        <div className="flex flex-col items-center gap-0.5 pl-4 flex-1">
+                                            <span className="w-5 h-5 flex items-center justify-center border border-gray-700 rounded-sm text-[10px] font-bold text-gray-700 bg-white">E</span>
+                                            <span className="text-[10px] text-gray-500">Everyone</span>
+                                        </div>
+                                    </div>
+
+                                    {/* Install Button */}
+                                    <button className="w-full bg-[#01875f] hover:bg-[#017250] text-white py-2.5 rounded-lg text-sm font-semibold shadow-sm transition-colors text-center">
+                                        Install
+                                    </button>
+
+                                    <div className="mt-3 flex items-center justify-center gap-1.5 text-[10px] text-gray-400">
+                                        <svg className="w-3 h-3 opacity-50" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z" /></svg>
+                                        Google Play Verified
                                     </div>
                                 </div>
 

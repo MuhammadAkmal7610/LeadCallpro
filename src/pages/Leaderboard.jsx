@@ -61,7 +61,7 @@ export default function Leaderboard() {
                             </div>
 
                             {/* Search & Total Stats */}
-                            <div className="bg-gradient-to-br from-[#08A698]/10 via-teal-50 to-white rounded-xl p-6 border border-teal-100/50 shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
+                            <div className="bg-gradient-to-br from-teal-50 via-white to-white rounded-xl p-6 border border-teal-100 shadow-sm relative overflow-hidden group hover:shadow-md transition-all">
                                 <div className="absolute top-0 right-0 p-4 opacity-10 group-hover:opacity-20 transition-opacity">
                                     <ChartBarIcon className="w-24 h-24 text-[#08A698] -mr-8 -mt-8" />
                                 </div>

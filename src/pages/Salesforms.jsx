@@ -40,7 +40,7 @@ export default function Salesforms() {
                                 </div>
                                 <p className="text-sm text-gray-500 mt-1">Automatically capture and qualify leads with custom forms</p>
                             </div>
-                            <button className="bg-[#08A698] hover:bg-[#078F82] text-white px-5 py-2.5 rounded-xl text-sm font-semibold shadow-sm hover:shadow-md transition-all flex items-center gap-2">
+                            <button className="bg-primary hover:bg-secondary text-white px-6 py-3 rounded-xl text-sm font-semibold shadow-sm hover:shadow-md transition-all flex items-center gap-2">
                                 <PlusIcon className="w-5 h-5" /> Create Salesform
                             </button>
                         </div>
@@ -51,8 +51,8 @@ export default function Salesforms() {
                                 <button
                                     key={tab}
                                     onClick={() => setActiveTab(tab)}
-                                    className={`px-6 py-3 text-sm font-medium border-b-2 transition-all duration-200 ${activeTab === tab
-                                        ? 'border-[#08A698] text-[#08A698]'
+                                    className={`px-8 py-3.5 text-sm font-medium border-b-2 transition-all duration-200 ${activeTab === tab
+                                        ? 'border-primary text-primary'
                                         : 'border-transparent text-gray-500 hover:text-gray-700 hover:border-gray-300'
                                         }`}
                                 >
@@ -63,7 +63,7 @@ export default function Salesforms() {
 
                         {/* Filter Bar */}
                         <div className="flex flex-col md:flex-row gap-3 mb-6">
-                            <div className="flex-1 bg-white p-2.5 rounded-xl border border-gray-200 shadow-sm focus-within:ring-2 focus-within:ring-[#08A698]/20 focus-within:border-[#08A698] transition-all flex items-center">
+                            <div className="flex-1 bg-white p-3 rounded-xl border border-gray-200 shadow-sm focus-within:ring-2 focus-within:ring-primary/20 focus-within:border-primary transition-all flex items-center">
                                 <MagnifyingGlassIcon className="w-5 h-5 text-gray-400 ml-2 mr-3" />
                                 <input
                                     type="text"
@@ -99,7 +99,7 @@ export default function Salesforms() {
                                         {activeTab === 'Published' && salesforms.map((form) => (
                                             <tr key={form.id} className="group hover:bg-teal-50/10 transition-colors">
                                                 <td className="px-6 py-4">
-                                                    <div className="font-semibold text-gray-900 group-hover:text-[#08A698] transition-colors cursor-pointer">{form.name}</div>
+                                                    <div className="font-semibold text-gray-900 group-hover:text-primary transition-colors cursor-pointer">{form.name}</div>
                                                 </td>
                                                 <td className="px-6 py-4">
                                                     <span className="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full text-xs font-medium bg-gray-100 text-gray-600 border border-gray-200">
@@ -110,7 +110,7 @@ export default function Salesforms() {
                                                 <td className="px-6 py-4">
                                                     <label className="relative inline-flex items-center cursor-pointer">
                                                         <input type="checkbox" className="sr-only peer" defaultChecked={form.status} />
-                                                        <div className="w-9 h-5 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-[#08A698]/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-4 after:w-4 after:transition-all peer-checked:bg-[#08A698]"></div>
+                                                        <div className="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
                                                     </label>
                                                 </td>
                                                 <td className="px-6 py-4 text-right">
@@ -123,8 +123,8 @@ export default function Salesforms() {
                                                 </td>
                                                 <td className="px-6 py-4 text-right">
                                                     <div className="flex items-center justify-end gap-2 opacity-0 group-hover:opacity-100 transition-opacity">
-                                                        <button className="p-2 text-gray-400 hover:text-[#08A698] hover:bg-teal-50 rounded-lg transition-colors" title="Duplicate">
-                                                            <DocumentDuplicateIcon className="w-4 h-4" />
+                                                        <button className="p-2 text-gray-400 hover:text-primary hover:bg-teal-50 rounded-lg transition-colors" title="Duplicate">
+                                                            <DocumentDuplicateIcon className="w-5 h-5" />
                                                         </button>
                                                         <button className="p-2 text-gray-400 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors" title="Delete">
                                                             <TrashIcon className="w-4 h-4" />

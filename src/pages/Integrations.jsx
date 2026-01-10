@@ -13,8 +13,8 @@ const activeIntegrations = [
 ];
 
 const availableIntegrations = [
-    { id: 6, name: '99acres', description: 'Capture 99acres Leads in your Telecrm account', logo: 'https://play-lh.googleusercontent.com/BJDwXl2tO7RjDg-Z5XqB2nK6C1R8QP-D3L5fQ6R8nE7T9U0V1W4Y2Z3A-G5H9I0J7w' }, // Placeholder or use text
-    { id: 7, name: 'CallerDesk', description: 'Integrate CallerDesk in your Telecrm account', logo: 'https://pbs.twimg.com/profile_images/1283688869919576064/g4w-4yq__400x400.jpg' },
+    { id: 6, name: '99acres', description: 'Capture 99acres Leads in your Telecrm account', logo: 'https://logo.clearbit.com/99acres.com' },
+    { id: 7, name: 'CallerDesk', description: 'Integrate CallerDesk in your Telecrm account', logo: 'https://logo.clearbit.com/callerdesk.io' },
     // Add more if needed, just demonstrating the layout
 ];
 

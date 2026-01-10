@@ -212,7 +212,7 @@ export default function Campaigns() {
                                                 <td className="px-6 py-4">
                                                     <div className="flex -space-x-2">
                                                         {campaign.assignees.map((initial, idx) => (
-                                                            <div key={idx} className={`w-7 h-7 rounded-full border-2 border-white flex items-center justify-center text-[9px] font-bold shadow-sm ${initial.startsWith('+') ? 'bg-gray-100 text-gray-600' : 'bg-indigo-50 text-indigo-600'}`}>
+                                                            <div key={idx} className={`w-7 h-7 rounded-full border-2 border-white flex items-center justify-center text-[9px] font-bold shadow-sm ${initial.startsWith('+') ? 'bg-gray-100 text-gray-600' : 'bg-teal-50 text-teal-600'}`}>
                                                                 {initial}
                                                             </div>
                                                         ))}
