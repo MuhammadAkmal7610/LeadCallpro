@@ -7,19 +7,20 @@ import {
     ChatBubbleLeftRightIcon,
     PhoneIcon,
     EnvelopeIcon,
-    SparklesIcon
+    SparklesIcon,
+    FunnelIcon
 } from '@heroicons/react/24/outline';
 
 const Search = () => {
     const [sidebarOpen, setSidebarOpen] = useState(false);
-    const [activeFilter, setActiveFilter] = useState('Auto');
+    const [activeFilter, setActiveFilter] = useState('All');
     const [searchValue, setSearchValue] = useState('');
 
     const filters = [
-        { name: 'Auto', icon: null }, // Special styling for Auto
-        { name: 'Mobile', icon: DevicePhoneMobileIcon, label: 'Phone' },
+        { name: 'All', icon: SparklesIcon, label: 'All' },
+        { name: 'Mobile', icon: DevicePhoneMobileIcon, label: 'Mobile' },
         { name: 'Text', icon: ChatBubbleLeftRightIcon, label: 'Text' },
-        { name: 'Call', icon: PhoneIcon, label: 'Phone' },
+        { name: 'Call', icon: PhoneIcon, label: 'Call' },
         { name: 'Email', icon: EnvelopeIcon, label: 'Email' },
     ];
 
@@ -30,67 +31,60 @@ const Search = () => {
             <div className="flex flex-1 flex-col h-full min-w-0">
                 <Header setIsSidebarOpen={setSidebarOpen} />
 
-                <main className="flex-1 overflow-y-auto p-6">
-                    <div className="max-w-4xl mx-auto space-y-6">
+                <main className="flex-1 overflow-y-auto p-6 lg:p-8 bg-gray-50/50">
+                    <div className="max-w-3xl mx-auto space-y-8 mt-4">
 
-                        {/* Page Title */}
-                        <h1 className="text-2xl font-bold text-gray-700">Search leads</h1>
+                        {/* Page Title & Intro */}
+                        <div className="text-center space-y-2">
+                            <h1 className="text-3xl font-bold text-gray-900 tracking-tight">Search Leads</h1>
+                            <p className="text-gray-500 text-sm">Find any lead by name, phone number, email, or ID.</p>
+                        </div>
 
                         {/* Search Container */}
-                        <div className="bg-white rounded-lg shadow-sm border border-gray-200 p-2">
+                        <div className="bg-white rounded-2xl shadow-lg shadow-gray-200/50 border border-gray-200 overflow-hidden ring-4 ring-gray-50/50">
 
-                            {/* Input Field */}
-                            <div className="relative border-b border-gray-200">
+                            {/* Input Field Area */}
+                            <div className="relative px-6 py-6 border-b border-gray-100">
+                                <div className="absolute inset-y-0 left-6 flex items-center pointer-events-none">
+                                    <MagnifyingGlassIcon className={`w-6 h-6 transition-colors duration-200 ${searchValue ? 'text-[#08A698]' : 'text-gray-400'}`} />
+                                </div>
                                 <input
                                     type="text"
                                     value={searchValue}
                                     onChange={(e) => setSearchValue(e.target.value)}
-                                    placeholder="Search for a lead's name, phone or other details"
-                                    className="w-full py-3 px-4 text-sm text-gray-700 placeholder-gray-400 focus:outline-none bg-transparent"
+                                    placeholder="Start typing to search..."
+                                    className="w-full pl-10 pr-4 text-lg text-gray-900 placeholder-gray-400 bg-transparent border-none focus:ring-0 outline-none"
+                                    autoFocus
                                 />
-                                <MagnifyingGlassIcon className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-gray-400" />
+                                {searchValue && (
+                                    <button
+                                        onClick={() => setSearchValue('')}
+                                        className="absolute inset-y-0 right-6 flex items-center text-xs font-semibold text-gray-400 hover:text-gray-600 uppercase tracking-wide"
+                                    >
+                                        Clear
+                                    </button>
+                                )}
                             </div>
 
                             {/* Filters Toolbar */}
-                            <div className="flex items-center gap-2 pt-3 px-2 pb-1 overflow-x-auto no-scrollbar">
-                                <div className="text-gray-400 pr-2">
-                                    <MagnifyingGlassIcon className="w-5 h-5" />
-                                </div>
-
+                            <div className="px-4 py-3 bg-gray-50/50 flex flex-wrap items-center justify-center gap-2">
+                                <span className="text-xs font-semibold text-gray-400 uppercase tracking-wider mr-2">Filter by:</span>
                                 {filters.map((filter) => {
-                                    const isAuto = filter.name === 'Auto';
                                     const isActive = activeFilter === filter.name;
                                     const Icon = filter.icon;
-
-                                    if (isAuto) {
-                                        return (
-                                            <button
-                                                key={filter.name}
-                                                onClick={() => setActiveFilter(filter.name)}
-                                                className={`
-                                                    flex items-center justify-center px-4 py-1.5 rounded-full text-xs font-bold transition-all
-                                                    ${isActive
-                                                        ? 'bg-[#08A698] text-white shadow-sm' // Matches the purple in the image (Indigo-500) or we can use Teal: bg-[#08A698]  <-- UPDATED to Teal
-                                                        : 'bg-gray-100 text-gray-600 hover:bg-gray-200'}
-                                                `}
-                                            >
-                                                {filter.name}
-                                            </button>
-                                        );
-                                    }
 
                                     return (
                                         <button
                                             key={filter.name}
                                             onClick={() => setActiveFilter(filter.name)}
                                             className={`
-                                                flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium border transition-colors whitespace-nowrap
+                                                flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-semibold transition-all duration-200 border
                                                 ${isActive
-                                                    ? 'border-[#08A698] text-[#08A698] bg-teal-50'
-                                                    : 'border-gray-200 text-gray-600 hover:border-gray-300 hover:bg-gray-50'}
+                                                    ? 'bg-white border-[#08A698] text-[#08A698] shadow-sm ring-1 ring-[#08A698]/20'
+                                                    : 'bg-white border-gray-200 text-gray-500 hover:border-gray-300 hover:text-gray-700 hover:bg-gray-50'}
                                             `}
                                         >
-                                            {Icon && <Icon className="w-3.5 h-3.5" />}
+                                            {Icon && <Icon className="w-4 h-4" />}
                                             {filter.label}
                                         </button>
                                     );
@@ -98,9 +92,22 @@ const Search = () => {
                             </div>
                         </div>
 
-                        {/* Empty State / Results Area */}
-                        <div className="mt-4">
-                            <p className="text-sm text-gray-600">Enter search value to see results here</p>
+                        {/* Results / Empty State */}
+                        <div className="text-center py-12">
+                            {searchValue ? (
+                                <div className="flex flex-col items-center justify-center space-y-3 opacity-60 animate-pulse">
+                                    <div className="w-12 h-12 bg-gray-200 rounded-full"></div>
+                                    <div className="h-4 w-48 bg-gray-200 rounded"></div>
+                                    <div className="h-3 w-32 bg-gray-200 rounded"></div>
+                                </div>
+                            ) : (
+                                <div className="space-y-4">
+                                    <div className="w-16 h-16 bg-gray-100 rounded-full flex items-center justify-center mx-auto text-gray-300">
+                                        <MagnifyingGlassIcon className="w-8 h-8" />
+                                    </div>
+                                    <p className="text-sm text-gray-500 font-medium">Type something above to see results.</p>
+                                </div>
+                            )}
                         </div>
 
                     </div>

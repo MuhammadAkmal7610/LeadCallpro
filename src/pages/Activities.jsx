@@ -11,7 +11,8 @@ import {
     CalendarIcon,
     CheckCircleIcon,
     ClockIcon,
-    ArrowPathIcon
+    ArrowPathIcon,
+    EllipsisHorizontalIcon
 } from '@heroicons/react/24/outline';
 
 // Mock Data Grouped by Date
@@ -24,11 +25,11 @@ const activities = [
                 type: 'call',
                 title: 'Outbound Call - Connected',
                 subtitle: 'Sarah Wilson',
-                description: 'Discussed project requirements and timeline. Client is interested in the premium plan. Scheduled follow-up for next week.',
+                description: 'Discussed project requirements and timeline. Client is interested in the premium plan.',
                 time: '10:42 AM',
                 user: 'John Doe',
                 duration: '4m 32s',
-                badgeColor: 'bg-green-50 text-green-700 border-green-100'
+                badgeColor: 'text-emerald-600 bg-emerald-50 border-emerald-100'
             },
             {
                 id: 2,
@@ -38,7 +39,7 @@ const activities = [
                 description: 'Sent the revised proposal document as requested in the last meeting.',
                 time: '09:15 AM',
                 user: 'John Doe',
-                badgeColor: 'bg-blue-50 text-blue-700 border-blue-100'
+                badgeColor: 'text-blue-600 bg-blue-50 border-blue-100'
             }
         ]
     },
@@ -53,7 +54,7 @@ const activities = [
                 description: 'Demo scheduled with the engineering team for next Tuesday.',
                 time: '4:00 PM',
                 user: 'Alice Smith',
-                badgeColor: 'bg-purple-50 text-purple-700 border-purple-100'
+                badgeColor: 'text-purple-600 bg-purple-50 border-purple-100'
             },
             {
                 id: 4,
@@ -63,7 +64,7 @@ const activities = [
                 description: 'Client asked to hold off on billing until the new fiscal year starts.',
                 time: '1:30 PM',
                 user: 'John Doe',
-                badgeColor: 'bg-amber-50 text-amber-700 border-amber-100'
+                badgeColor: 'text-amber-600 bg-amber-50 border-amber-100'
             }
         ]
     },
@@ -78,7 +79,7 @@ const activities = [
                 description: 'Can you send me the pricing sheet again? Also needing info on enterprise tiers.',
                 time: '11:20 AM',
                 user: 'Sarah Wilson',
-                badgeColor: 'bg-teal-50 text-teal-700 border-teal-100'
+                badgeColor: 'text-teal-600 bg-teal-50 border-teal-100'
             }
         ]
     }
@@ -99,138 +100,103 @@ export default function Activities() {
     const [sidebarOpen, setSidebarOpen] = useState(false);
 
     return (
-        <div className="flex h-screen bg-[#F8F9FA] text-[#202124] font-sans">
+        <div className="flex h-screen bg-[#F8F9FA] text-[#202124] font-sans antialiased overflow-hidden">
             <Sidebar isOpen={sidebarOpen} setIsOpen={setSidebarOpen} />
 
-            <div className="flex flex-1 flex-col overflow-hidden">
+            <div className="flex flex-1 flex-col h-full min-w-0">
                 <Header setIsSidebarOpen={setSidebarOpen} />
 
-                <main className="flex-1 overflow-y-auto px-4 py-8 lg:px-12 bg-gray-50/50">
-                    <div className="mx-auto max-w-5xl">
+                <main className="flex-1 overflow-y-auto p-6 md:p-8 bg-gray-50/50">
+                    <div className="mx-auto max-w-5xl space-y-6">
 
                         {/* Page Header */}
-                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4 mb-8">
+                        <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-4">
                             <div>
-                                <h1 className="text-2xl font-bold text-gray-900">Activities</h1>
-                                <p className="text-sm text-gray-500 mt-1">Track all team interactions and updates.</p>
+                                <h1 className="text-2xl font-bold text-gray-900 tracking-tight">Activities</h1>
+                                <p className="text-sm text-gray-500 mt-1">Track all interactions and updates.</p>
                             </div>
-                            <div className="flex gap-3">
-                                <div className="relative group">
-                                    <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 h-4 w-4 text-gray-400 group-focus-within:text-[#08A698] transition-colors" />
+                            <div className="flex items-center gap-3">
+                                <div className="relative">
+                                    <MagnifyingGlassIcon className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400" />
                                     <input
                                         type="text"
-                                        placeholder="Search timeline..."
-                                        className="pl-9 pr-4 py-2 bg-white border border-gray-200 rounded-lg text-sm outline-none focus:border-[#08A698] focus:ring-1 focus:ring-[#08A698] transition-all w-full sm:w-64 shadow-sm"
+                                        placeholder="Search activities..."
+                                        className="pl-9 pr-4 py-2 bg-white border border-gray-200 rounded-lg text-sm focus:outline-none focus:border-[#08A698] w-full sm:w-64 transition-shadow shadow-sm"
                                     />
                                 </div>
-                                <button className="flex items-center gap-2 px-4 py-2 bg-white border border-gray-200 text-gray-600 rounded-lg text-sm font-semibold hover:bg-gray-50 hover:border-gray-300 transition-all shadow-sm">
-                                    <FunnelIcon className="h-4 w-4" />
-                                    Filter
+                                <button className="p-2 bg-white border border-gray-200 rounded-lg text-gray-500 hover:text-[#08A698] hover:border-teal-200 transition-colors shadow-sm">
+                                    <FunnelIcon className="w-5 h-5" />
                                 </button>
                             </div>
                         </div>
 
-                        {/* Timeline Container */}
-                        <div className="space-y-12 relative">
-                            {/* Continuous vertical line if needed, but per-group is often cleaner for date grouping */}
+                        {/* Timeline */}
+                        <div className="space-y-8 relative">
+                            {/* Vertical Line for Timeline */}
+                            <div className="absolute left-[27px] top-4 bottom-4 w-px bg-gray-200 hidden sm:block"></div>
 
-                            {activities.map((group, groupIndex) => (
-                                <div key={groupIndex} className="relative">
-                                    {/* Date Header */}
-                                    <div className="sticky top-0 z-10 flex justify-start pl-[68px] mb-8">
-                                        <span className="bg-white text-gray-500 px-3 py-1.5 rounded-full text-xs font-bold border border-gray-200 shadow-sm uppercase tracking-wider">
-                                            {group.date}
-                                        </span>
+                            {activities.map((group, groupIdx) => (
+                                <div key={groupIdx} className="relative">
+                                    {/* Date Label */}
+                                    <div className="flex items-center gap-4 mb-4">
+                                        <div className="w-[54px] hidden sm:flex justify-center">
+                                            <div className="w-2.5 h-2.5 rounded-full bg-gray-300 ring-4 ring-[#F8F9FA]"></div>
+                                        </div>
+                                        <h3 className="text-xs font-bold text-gray-500 uppercase tracking-wider bg-[#F8F9FA] pr-2 z-10">{group.date}</h3>
                                     </div>
 
-                                    <div className="relative space-y-8">
-                                        {group.items.map((activity, idx) => (
-                                            <div key={activity.id} className="relative pl-[68px] group">
+                                    <div className="space-y-4">
+                                        {group.items.map((item) => (
+                                            <div key={item.id} className="relative sm:pl-14 group">
+                                                {/* Connector Line (Mobile hidden) */}
 
-                                                {/* Vertical Line Segment */}
-                                                {/* We draw a line from this item up to the previous one or top */}
-                                                <div className={`absolute left-[34px] top-0 bottom-0 w-0.5 bg-gray-200 ${idx === group.items.length - 1 ? 'bottom-auto h-full' : ''} ${groupIndex === activities.length - 1 && idx === group.items.length - 1 ? 'h-0' : ''}`}></div>
+                                                <div className="bg-white rounded-xl border border-gray-200 p-4 shadow-sm transition-all hover:shadow-md hover:border-teal-100 min-h-[100px] flex flex-col sm:flex-row gap-4">
 
-                                                {/* If it's the last item of the last group, we stop the line at the icon.
-                                                    Actually, purely visual CSS lines are easier with a continuous full-height border on a parent wrapper if simple.
-                                                    Here we want a 'connector' style.
-                                                */}
-
-                                                {/* Icon Node */}
-                                                <div className="absolute left-[18px] top-0 w-8 h-8 rounded-full border border-gray-100 bg-white flex items-center justify-center z-10 shadow-sm ring-4 ring-[#F8F9FA] group-hover:ring-white group-hover:shadow-md transition-all">
-                                                    <div className={`w-full h-full rounded-full flex items-center justify-center ${activity.type === 'call' ? 'text-[#08A698] bg-teal-50' :
-                                                        activity.type === 'meeting' ? 'text-purple-600 bg-purple-50' :
-                                                            activity.type === 'email' ? 'text-blue-600 bg-blue-50' :
-                                                                'text-gray-500 bg-gray-100'
-                                                        }`}>
-                                                        <ActivityIcon type={activity.type} />
+                                                    {/* Icon */}
+                                                    <div className={`w-10 h-10 rounded-full flex-shrink-0 flex items-center justify-center border ${item.badgeColor}`}>
+                                                        <ActivityIcon type={item.type} />
                                                     </div>
-                                                </div>
 
-                                                {/* Card */}
-                                                <div className="bg-white rounded-xl border border-gray-100 p-5 hover:shadow-md transition-all duration-300 hover:border-[#08A698]/30 group-hover:translate-x-1">
-                                                    <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 mb-3">
-                                                        <div className="flex items-center gap-3">
-                                                            <h3 className="text-sm font-bold text-gray-900">{activity.title}</h3>
-                                                            {activity.duration && (
-                                                                <span className="text-[10px] bg-gray-50 text-gray-500 px-2 py-0.5 rounded-md border border-gray-100 font-medium flex items-center gap-1">
-                                                                    <ClockIcon className="w-3 h-3" /> {activity.duration}
-                                                                </span>
+                                                    <div className="flex-1 min-w-0">
+                                                        <div className="flex items-start justify-between gap-4">
+                                                            <div>
+                                                                <h4 className="text-sm font-bold text-gray-900">{item.title} <span className="font-normal text-gray-500 mx-1">•</span> <span className="font-medium text-gray-700">{item.subtitle}</span></h4>
+                                                                <p className="text-sm text-gray-600 mt-1 leading-relaxed">{item.description}</p>
+                                                            </div>
+                                                            <div className="flex items-center text-xs text-gray-400 gap-1 whitespace-nowrap">
+                                                                <ClockIcon className="w-3.5 h-3.5" />
+                                                                {item.time}
+                                                            </div>
+                                                        </div>
+
+                                                        <div className="flex items-center gap-3 mt-3">
+                                                            <div className="flex items-center gap-1.5 text-xs font-medium text-gray-500 bg-gray-50 px-2 py-1 rounded-md border border-gray-100">
+                                                                <UserCircleIcon className="w-3.5 h-3.5" />
+                                                                {item.user}
+                                                            </div>
+                                                            {item.duration && (
+                                                                <div className="text-xs text-gray-400 flex items-center gap-1">
+                                                                    Duration: <span className="text-gray-600 font-medium">{item.duration}</span>
+                                                                </div>
                                                             )}
                                                         </div>
-                                                        <span className="text-xs font-semibold text-gray-400 tabular-nums">{activity.time}</span>
                                                     </div>
 
-                                                    <div className="mb-3">
-                                                        <p className="text-sm text-[#08A698] font-semibold mb-1">{activity.subtitle}</p>
-                                                        <p className="text-sm text-gray-600 leading-relaxed max-w-3xl">
-                                                            {activity.description}
-                                                        </p>
-                                                    </div>
-
-                                                    <div className="flex items-center gap-2 pt-3 border-t border-gray-50 mt-3">
-                                                        <div className="flex items-center gap-2 mr-auto">
-                                                            <div className="w-5 h-5 rounded-full bg-gray-100 flex items-center justify-center text-[9px] font-bold text-gray-500">
-                                                                {activity.user.split(' ').map(n => n[0]).join('')}
-                                                            </div>
-                                                            <span className="text-xs font-medium text-gray-500">{activity.user}</span>
-                                                        </div>
-
-                                                        <button className="text-xs font-bold text-gray-400 hover:text-[#08A698] transition-colors py-1 px-2 rounded hover:bg-teal-50">
-                                                            View Details
-                                                        </button>
-                                                        {activity.type === 'call' && (
-                                                            <button className="text-xs font-bold text-[#08A698] hover:text-[#078F82] transition-colors py-1 px-2 rounded hover:bg-teal-50 border border-transparent hover:border-teal-100">
-                                                                ▶ Listen
-                                                            </button>
-                                                        )}
-                                                    </div>
+                                                    {/* Action Menu Placeholder */}
+                                                    <button className="self-start sm:self-center p-1 text-gray-300 hover:text-gray-500 transition-colors">
+                                                        <EllipsisHorizontalIcon className="w-5 h-5" />
+                                                    </button>
                                                 </div>
                                             </div>
                                         ))}
                                     </div>
-
-                                    {/* Connector to next group */}
-                                    {groupIndex !== activities.length - 1 && (
-                                        <div className="absolute left-[34px] top-full h-8 w-0.5 bg-gray-200"></div>
-                                    )}
                                 </div>
                             ))}
-                        </div>
-
-                        {/* End of Timeline */}
-                        <div className="mt-12 flex flex-col items-center gap-4">
-                            <div className="w-0.5 h-8 bg-gradient-to-b from-gray-200 to-transparent"></div>
-                            <button className="flex items-center gap-2 px-6 py-2.5 bg-white border border-gray-200 text-gray-600 text-sm font-semibold rounded-full hover:bg-gray-50 hover:text-[#08A698] hover:border-[#08A698] transition-all shadow-sm group">
-                                <ArrowPathIcon className="w-4 h-4 group-hover:animate-spin" />
-                                Load Earlier Goals
-                            </button>
                         </div>
 
                     </div>
                 </main>
             </div>
-            {/* Global Styles override for this page if needed, or scoped */}
         </div>
     );
 }

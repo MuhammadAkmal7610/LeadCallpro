@@ -76,15 +76,15 @@ export default function WebsiteLeads() {
                                 </div>
                             </div>
                             <div className="flex gap-3 text-xs text-gray-500 mb-3">
-                                <span className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-gray-50"><ChatBubbleLeftIcon className="w-3 h-3 text-[#08A698]" /> 5M</span>
-                                <span className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-gray-50"><UserIcon className="w-3 h-3 text-[#08A698]" /> 13.29K</span>
+                                <span className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-teal-50 text-teal-700 font-medium"><ChatBubbleLeftIcon className="w-3 h-3 text-[#08A698]" /> 5M</span>
+                                <span className="flex items-center gap-1.5 px-2 py-0.5 rounded-full bg-gray-50"><UserIcon className="w-3 h-3 text-gray-400" /> 13.29K</span>
                             </div>
 
                             {/* Progress Circle Mockup */}
-                            <div className="flex items-center justify-between bg-gradient-to-br from-teal-50/50 to-white border border-teal-50 p-3 rounded-xl shadow-sm">
+                            <div className="flex items-center justify-between bg-gradient-to-br from-teal-50/30 to-white border border-teal-50 p-3 rounded-xl shadow-sm">
                                 <div className="flex -space-x-2">
                                     {[1, 2, 3].map(i => (
-                                        <div key={i} className="w-7 h-7 rounded-full bg-teal-100 border-2 border-white flex items-center justify-center text-[10px] text-teal-700 font-bold shadow-sm">
+                                        <div key={i} className="w-7 h-7 rounded-full bg-teal-50 border-2 border-white flex items-center justify-center text-[10px] text-teal-700 font-bold shadow-sm">
                                             U{i}
                                         </div>
                                     ))}
@@ -193,7 +193,7 @@ export default function WebsiteLeads() {
                                 </div>
                                 <div className="text-right">
                                     <div className="flex items-center justify-end gap-2 mb-1 p-1 pr-2 bg-white border border-gray-200 rounded-full shadow-sm">
-                                        <span className="w-6 h-6 rounded-full bg-purple-100 text-purple-700 flex items-center justify-center text-[10px] font-bold ring-2 ring-white">MA</span>
+                                        <span className="w-6 h-6 rounded-full bg-gray-100 text-gray-600 flex items-center justify-center text-[10px] font-bold ring-2 ring-white">MA</span>
                                         <span className="text-xs font-semibold text-gray-600">Mahrukh</span>
                                     </div>
                                 </div>
@@ -272,8 +272,8 @@ export default function WebsiteLeads() {
                                     isLast={false}
                                 />
                                 <TimelineItem
-                                    icon={<UserIcon className="w-3.5 h-3.5 text-purple-600" />}
-                                    bg="bg-purple-100 border-purple-200"
+                                    icon={<UserIcon className="w-3.5 h-3.5 text-teal-600" />}
+                                    bg="bg-teal-100 border-teal-200 ring-4 ring-white"
                                     text="Name - Abdul Rahman (IGNORED) Email_hidden_0 - abdulrehmanwarraich2001@gmail.com"
                                     time="26m"
                                     isLast={false}

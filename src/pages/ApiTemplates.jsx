@@ -26,70 +26,77 @@ export default function ApiTemplates() {
             <div className="flex flex-1 flex-col overflow-hidden">
                 <Header setIsSidebarOpen={setSidebarOpen} />
 
-                <main className="flex-1 overflow-y-auto px-4 py-8 lg:px-8 bg-gray-50/50">
+                <main className="flex-1 overflow-y-auto px-6 py-8 md:p-8 bg-gray-50/50">
                     <div className="mx-auto max-w-7xl">
 
                         {/* Page Header */}
-                        <div className="flex items-center justify-between mb-2">
-                            <div className="flex items-center gap-2">
-                                <h1 className="text-2xl font-semibold text-gray-800">API Templates</h1>
-                                <ArrowPathIcon className="w-5 h-5 text-gray-500 cursor-pointer hover:rotate-180 transition-transform duration-500" />
+                        <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-8">
+                            <div>
+                                <div className="flex items-center gap-2">
+                                    <h1 className="text-2xl font-bold text-gray-900">API Templates</h1>
+                                    <button className="p-1 rounded-full hover:bg-gray-100 transition-colors">
+                                        <ArrowPathIcon className="w-5 h-5 text-gray-400 hover:text-gray-600 transition-transform duration-500 hover:rotate-180" />
+                                    </button>
+                                </div>
+                                <p className="text-sm text-gray-500 mt-1">Configure and reuse API templates for your integrations</p>
                             </div>
-                            <button className="bg-[#08A698] hover:bg-teal-700 text-white px-4 py-2 rounded-lg text-sm font-medium flex items-center gap-1 transition-colors">
-                                Create New <PlusIcon className="w-4 h-4" />
+                            <button className="bg-[#08A698] hover:bg-[#078F82] text-white px-5 py-2.5 rounded-xl text-sm font-semibold shadow-sm hover:shadow-md transition-all flex items-center gap-2">
+                                <PlusIcon className="w-5 h-5" /> Create Template
                             </button>
                         </div>
-                        <p className="text-sm text-gray-500 mb-6">Create an API template once and use it everywhere</p>
 
                         {/* Table */}
-                        <div className="bg-white rounded-lg border border-gray-200 shadow-sm overflow-hidden">
+                        <div className="bg-white rounded-xl border border-gray-200 shadow-sm overflow-hidden">
                             <div className="overflow-x-auto">
                                 <table className="w-full text-sm text-left">
-                                    <thead className="bg-gray-50 text-gray-700 font-semibold border-b border-gray-200">
+                                    <thead className="bg-gray-50/80 text-gray-500 font-medium border-b border-gray-100">
                                         <tr>
-                                            <th className="px-6 py-3 min-w-[200px]">Template Name</th>
-                                            <th className="px-6 py-3 min-w-[300px]">Endpoint URL</th>
-                                            <th className="px-6 py-3">Variables Used</th>
-                                            <th className="px-6 py-3">Workflow</th>
-                                            <th className="px-6 py-3 bg-gray-100/50 border-x border-gray-200/50 cursor-pointer hover:bg-gray-100 transition-colors">
-                                                Last Modified <span className="text-[10px] ml-1">▼</span>
-                                            </th>
-                                            <th className="px-6 py-3">Last Modified By</th>
-                                            <th className="px-6 py-3 text-right">Actions</th>
+                                            <th className="px-6 py-4 font-semibold">Template Name</th>
+                                            <th className="px-6 py-4 font-semibold">Endpoint Details</th>
+                                            <th className="px-6 py-4 font-semibold">Variables</th>
+                                            <th className="px-6 py-4 font-semibold">Associated Workflow</th>
+                                            <th className="px-6 py-4 font-semibold text-right">Last Modified</th>
+                                            <th className="px-6 py-4 font-semibold text-right">Actions</th>
                                         </tr>
                                     </thead>
-                                    <tbody className="divide-y divide-gray-200">
+                                    <tbody className="divide-y divide-gray-100">
                                         {templates.map((template) => (
-                                            <tr key={template.id} className="hover:bg-gray-50/50 transition-colors">
-                                                <td className="px-6 py-4 font-medium text-gray-900">{template.name}</td>
-                                                <td className="px-6 py-4 text-gray-500 truncate max-w-[300px]" title={template.endpoint}>
-                                                    {template.endpoint}
+                                            <tr key={template.id} className="group hover:bg-teal-50/10 transition-colors">
+                                                <td className="px-6 py-5">
+                                                    <div className="font-semibold text-gray-900 group-hover:text-[#08A698] transition-colors cursor-pointer">{template.name}</div>
                                                 </td>
-                                                <td className="px-6 py-4">
-                                                    <div className="flex gap-1">
-                                                        <span className="bg-gray-100 text-gray-600 px-2 py-0.5 rounded textxs">{template.variables[0]}</span>
-                                                        <span className="bg-teal-50 text-teal-700 px-2 py-0.5 rounded text-xs font-semibold">{template.variables[1]}</span>
+                                                <td className="px-6 py-5">
+                                                    <code className="text-xs bg-gray-50 text-gray-600 px-2 py-1 rounded border border-gray-200 font-mono block w-fit max-w-[200px] truncate" title={template.endpoint}>
+                                                        {template.endpoint}
+                                                    </code>
+                                                </td>
+                                                <td className="px-6 py-5">
+                                                    <div className="flex gap-1.5 flex-wrap">
+                                                        <span className="bg-gray-100 text-gray-600 px-2 py-1 rounded text-[10px] font-mono border border-gray-200">{template.variables[0]}</span>
+                                                        <span className="bg-teal-50 text-teal-700 px-2 py-1 rounded text-[10px] font-mono border border-teal-100 font-semibold">{template.variables[1]}</span>
                                                     </div>
                                                 </td>
-                                                <td className="px-6 py-4">
-                                                    <span className="bg-teal-50 text-teal-700 px-2 py-1 rounded-md text-xs font-medium border border-teal-100">
-                                                        {template.workflow}
-                                                    </span>
-                                                </td>
-                                                <td className="px-6 py-4 text-gray-500">{template.lastModified}</td>
-                                                <td className="px-6 py-4">
-                                                    <div className="w-8 h-8 rounded-full bg-teal-100 text-teal-600 flex items-center justify-center text-xs font-bold ring-2 ring-white">
-                                                        {template.lastModifiedBy}
+                                                <td className="px-6 py-5">
+                                                    <div className="flex items-center gap-2">
+                                                        <span className="w-2 h-2 rounded-full bg-teal-400"></span>
+                                                        <span className="text-gray-700 font-medium">{template.workflow}</span>
                                                     </div>
                                                 </td>
-                                                <td className="px-6 py-4 text-right">
-                                                    <button className="p-1.5 text-gray-400 hover:text-[#08A698] hover:bg-teal-50 rounded-md transition-colors border border-gray-200">
+                                                <td className="px-6 py-5 text-right">
+                                                    <div className="flex flex-col items-end gap-0.5">
+                                                        <span className="text-gray-900 font-medium">{template.lastModified}</span>
+                                                        <div className="flex items-center gap-1.5 text-xs text-gray-500">
+                                                            by <span className="w-5 h-5 rounded-full bg-gray-100 text-gray-600 flex items-center justify-center font-bold text-[9px] border border-gray-200">{template.lastModifiedBy}</span>
+                                                        </div>
+                                                    </div>
+                                                </td>
+                                                <td className="px-6 py-5 text-right">
+                                                    <button className="p-2 text-gray-400 hover:text-[#08A698] hover:bg-teal-50 rounded-lg transition-colors border border-gray-200 hover:border-teal-100" title="Open">
                                                         <ArrowTopRightOnSquareIcon className="w-4 h-4" />
                                                     </button>
                                                 </td>
                                             </tr>
                                         ))}
-                                        {/* Empty state filler if needed, but keeping it minimal as per screenshot */}
                                     </tbody>
                                 </table>
                             </div>

@@ -248,9 +248,9 @@ const AccordionItem = ({ title, isOpen = false, children }) => {
 
 const StatusBadge = ({ status }) => {
     const styles = {
-        'Archive': 'bg-gray-100 text-gray-600 border-gray-200',
-        'Cold': 'bg-slate-100 text-slate-600 border-slate-200',
-        'Trash': 'bg-red-50 text-red-700 border-red-100',
+        'Archive': 'bg-gray-100 text-gray-600 border-gray-200 ring-1 ring-gray-100 shadow-sm',
+        'Cold': 'bg-slate-100 text-slate-600 border-slate-200 ring-1 ring-slate-100 shadow-sm',
+        'Trash': 'bg-red-50 text-red-700 border-red-100 ring-1 ring-red-100 shadow-sm',
     };
     return (
         <span className={`px-2.5 py-0.5 rounded-md text-[10px] font-bold border ${styles[status] || 'bg-gray-50'} uppercase tracking-wider`}>
@@ -262,10 +262,10 @@ const StatusBadge = ({ status }) => {
 const InfoField = ({ label, value, icon: Icon, isPlaceholder, flag, editable }) => (
     <div className={`group ${editable ? 'cursor-pointer' : ''} relative`}>
         <div className="flex items-center gap-1.5 mb-1.5">
-            <Icon className="w-3.5 h-3.5 text-gray-400" />
-            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider">{label}</span>
+            <Icon className="w-3.5 h-3.5 text-gray-400 group-hover:text-gray-600 transition-colors" />
+            <span className="text-[10px] font-bold text-gray-500 uppercase tracking-wider group-hover:text-gray-600 transition-colors">{label}</span>
         </div>
-        <div className={`text-sm font-medium text-gray-700 pl-5 flex items-center gap-2 border-b border-transparent pb-0.5`}>
+        <div className={`text-sm font-medium text-gray-700 pl-5 flex items-center gap-2 border-b border-transparent pb-0.5 group-hover:border-gray-200 transition-colors`}>
             {flag && <span className="text-base leading-none">🇵🇰</span>}
             {value}
         </div>
