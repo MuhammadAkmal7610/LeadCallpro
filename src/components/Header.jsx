@@ -1,14 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { useNavigate, Link } from 'react-router-dom';
+import { useAuth } from '../context/AuthContext';
 import {
     Bars3Icon, BellIcon, PhoneIcon, ChevronDownIcon, MagnifyingGlassIcon,
     BuildingOfficeIcon, Cog8ToothIcon, ListBulletIcon, FunnelIcon,
     AdjustmentsHorizontalIcon, UsersIcon, ShieldCheckIcon, CreditCardIcon,
     DocumentTextIcon, UserCircleIcon, ChatBubbleLeftEllipsisIcon, NoSymbolIcon, PowerIcon, CogIcon, ArrowRightOnRectangleIcon
 } from '@heroicons/react/24/outline';
-import Logo from '../assets/Logo.svg';
+import Logo from '../assets/Logo.png';
 
 export default function Header({ setIsSidebarOpen }) {
+    const { signOut } = useAuth();
+    const navigate = useNavigate();
+
+    const handleLogout = async () => {
+        await signOut();
+        navigate('/login');
+    };
+
     return (
         <header className="flex h-16 items-center justify-between bg-white px-6 border-b border-gray-200 gap-4">
             {/* Left Section: Mobile Menu & Posh Logo */}
@@ -22,9 +31,9 @@ export default function Header({ setIsSidebarOpen }) {
 
                 {/* Standard Logo - Aligned with Sidebar */}
                 <div className="flex items-center gap-3">
-                    {/* <img src={Logo} alt="AnyLead" className="w-10 h-10 object-contain" /> */}
+                    {/* <img src={Logo} alt="WeWave" className="w-10 h-10 object-contain" /> */}
                     <span className="text-2xl font-semibold text-gray-900 tracking-tight">
-                        AnyLead Inc.
+                        WeWave Inc.
                     </span>
                 </div>
             </div>
@@ -229,14 +238,14 @@ export default function Header({ setIsSidebarOpen }) {
                             {/* User Info Header */}
                             <div className="p-4 bg-gray-50/50 border-b border-gray-100">
                                 <div className="flex items-center justify-between mb-1">
-                                    <span className="font-semibold text-gray-900">AnyLead Inc.</span>
+                                    <span className="font-semibold text-gray-900">WeWave Inc.</span>
                                     <span className="px-2 py-0.5 bg-gray-100 border border-gray-200 rounded-full text-[10px] font-semibold text-gray-600 flex items-center gap-1.5 uppercase tracking-wider">
                                         <UsersIcon className="w-3 h-3 text-gray-500" />
                                         Root
                                     </span>
                                 </div>
                                 <div className="text-xs text-[#08A698] font-medium truncate">
-                                    admin@anylead.site
+                                    admin@wewave.site
                                 </div>
                             </div>
 
@@ -262,7 +271,10 @@ export default function Header({ setIsSidebarOpen }) {
 
                             {/* Logout Section */}
                             <div className="p-2 border-t border-gray-100 bg-gray-50/30">
-                                <button className="w-full flex items-center gap-3 px-3 py-2 text-sm text-gray-700 hover:bg-rose-50 hover:text-rose-600 rounded-lg transition-colors group/logout">
+                                <button
+                                    onClick={handleLogout}
+                                    className="w-full flex items-center gap-3 px-3 py-2 text-sm text-gray-700 hover:bg-rose-50 hover:text-rose-600 rounded-lg transition-colors group/logout"
+                                >
                                     <ArrowRightOnRectangleIcon className="h-4 w-4 text-gray-400 group-hover/logout:text-rose-500" />
                                     Sign Out
                                 </button>

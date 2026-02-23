@@ -1,4 +1,10 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { Toaster } from 'react-hot-toast';
+import { AuthProvider } from './context/AuthContext';
+import { HealthCheckProvider } from './context/HealthCheckContext';
+import ProtectedRoute from './components/ProtectedRoute';
+import Login from './pages/auth/Login';
+import Signup from './pages/auth/Signup';
 import Home from './pages/Home';
 import Search from './pages/Search';
 import Dashboard from './pages/Dashboard';
@@ -49,62 +55,72 @@ import Pipeline from './pages/Pipeline';
 
 function App() {
   return (
-    <Router>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/home" element={<Home />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-        <Route path="/search" element={<Search />} />
-        <Route path="/add-leads" element={<AddLead />} /> {/* Direct link for sidebar parent item fallback */}
-        <Route path="/activities" element={<Activities />} />
-        {/* Placeholder Routes redirected to Under Construction */}
-        <Route path="/under-construction" element={<UnderConstruction />} />
-        <Route path="/website-leads" element={<WebsiteLeads />} />
-        <Route path="/facebook-leads" element={<FacebookLeads />} />
-        <Route path="/old-leads" element={<OldLeads />} />
-        <Route path="/campaigns" element={<Campaigns />} />
-        <Route path="/all-leads" element={<AllLeads />} />
-        <Route path="/my-leads" element={<MyLeads />} />
-        <Route path="/assigned-leads" element={<AssignedLeads />} />
-        <Route path="/daily-report" element={<DailyReport />} />
-        <Route path="/whatsapp-leads" element={<WhatsappLeads />} />
-        <Route path="/filters" element={<UnderConstruction />} />
-        <Route path="/my-lists" element={<MyLists />} />
-        <Route path="/leaderboard" element={<Leaderboard />} />
-        <Route path="/call-report" element={<CallReport />} />
-        <Route path="/report-download" element={<ReportDownload />} />
-        <Route path="/all-duplicates" element={<AllDuplicates />} />
-        <Route path="/reports" element={<UnderConstruction />} />
+    <AuthProvider>
+      <HealthCheckProvider>
+        <Toaster position="top-center" reverseOrder={false} />
+        <Router>
+          <Routes>
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
 
-        <Route path="/automations" element={<UnderConstruction />} /> {/* Fallback if not Workflows */}
+            <Route element={<ProtectedRoute />}>
+              <Route path="/" element={<Home />} />
+              <Route path="/home" element={<Home />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+              <Route path="/search" element={<Search />} />
+              <Route path="/add-leads" element={<AddLead />} /> {/* Direct link for sidebar parent item fallback */}
+              <Route path="/activities" element={<Activities />} />
+              {/* Placeholder Routes redirected to Under Construction */}
+              <Route path="/under-construction" element={<UnderConstruction />} />
+              <Route path="/website-leads" element={<WebsiteLeads />} />
+              <Route path="/facebook-leads" element={<FacebookLeads />} />
+              <Route path="/old-leads" element={<OldLeads />} />
+              <Route path="/campaigns" element={<Campaigns />} />
+              <Route path="/all-leads" element={<AllLeads />} />
+              <Route path="/my-leads" element={<MyLeads />} />
+              <Route path="/assigned-leads" element={<AssignedLeads />} />
+              <Route path="/daily-report" element={<DailyReport />} />
+              <Route path="/whatsapp-leads" element={<WhatsappLeads />} />
+              <Route path="/filters" element={<UnderConstruction />} />
+              <Route path="/my-lists" element={<MyLists />} />
+              <Route path="/leaderboard" element={<Leaderboard />} />
+              <Route path="/call-report" element={<CallReport />} />
+              <Route path="/report-download" element={<ReportDownload />} />
+              <Route path="/all-duplicates" element={<AllDuplicates />} />
+              <Route path="/reports" element={<UnderConstruction />} />
 
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/templates" element={<MessageTemplates />} />
-        <Route path="/teammember-blocklist" element={<TeamMemberBlocklist />} />
-        <Route path="/my-preferences" element={<UserPreferences />} />
-        <Route path="/notifications" element={<Notifications />} />
-        <Route path="/all-tasks" element={<AllTasks />} />
-        <Route path="/transaction-history" element={<TransactionHistory />} />
-        <Route path="/billing" element={<Billing />} />
-        <Route path="/permission-templates" element={<PermissionTemplates />} />
-        <Route path="/users" element={<UsersManagement />} />
-        <Route path="/enterprise-preferences" element={<EnterprisePreferences />} />
-        <Route path="/call-feedback" element={<CallFeedback />} />
-        <Route path="/lead-fields" element={<LeadFields />} />
-        <Route path="/manage-workspaces" element={<ManageWorkspaces />} />
+              <Route path="/automations" element={<UnderConstruction />} /> {/* Fallback if not Workflows */}
 
-        <Route path="/lead-stage-configure" element={<LeadStage />} />
-        <Route path="/integrations" element={<Integrations />} />
-        <Route path="/api-templates" element={<ApiTemplates />} />
-        <Route path="/salesforms" element={<Salesforms />} />
-        <Route path="/schedules" element={<Schedules />} />
-        <Route path="/workflows" element={<Workflows />} />
-        <Route path="/pipeline" element={<Pipeline />} />
-        <Route path="/add-lead" element={<AddLead />} />
-        <Route path="/import-leads" element={<ImportLeads />} />
-        <Route path="/dashboard" element={<Dashboard />} />
-      </Routes>
-    </Router>
+              <Route path="/profile" element={<Profile />} />
+              <Route path="/templates" element={<MessageTemplates />} />
+              <Route path="/teammember-blocklist" element={<TeamMemberBlocklist />} />
+              <Route path="/my-preferences" element={<UserPreferences />} />
+              <Route path="/notifications" element={<Notifications />} />
+              <Route path="/all-tasks" element={<AllTasks />} />
+              <Route path="/transaction-history" element={<TransactionHistory />} />
+              <Route path="/billing" element={<Billing />} />
+              <Route path="/permission-templates" element={<PermissionTemplates />} />
+              <Route path="/users" element={<UsersManagement />} />
+              <Route path="/enterprise-preferences" element={<EnterprisePreferences />} />
+              <Route path="/call-feedback" element={<CallFeedback />} />
+              <Route path="/lead-fields" element={<LeadFields />} />
+              <Route path="/manage-workspaces" element={<ManageWorkspaces />} />
+
+              <Route path="/lead-stage-configure" element={<LeadStage />} />
+              <Route path="/integrations" element={<Integrations />} />
+              <Route path="/api-templates" element={<ApiTemplates />} />
+              <Route path="/salesforms" element={<Salesforms />} />
+              <Route path="/schedules" element={<Schedules />} />
+              <Route path="/workflows" element={<Workflows />} />
+              <Route path="/pipeline" element={<Pipeline />} />
+              <Route path="/add-lead" element={<AddLead />} />
+              <Route path="/import-leads" element={<ImportLeads />} />
+              <Route path="/dashboard" element={<Dashboard />} />
+            </Route>
+          </Routes>
+        </Router>
+      </HealthCheckProvider>
+    </AuthProvider >
   );
 }
 

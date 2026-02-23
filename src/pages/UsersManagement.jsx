@@ -23,7 +23,7 @@ import {
     CheckIcon,
     XMarkIcon
 } from '@heroicons/react/24/outline';
-import Logo from '../assets/Logo.svg';
+import Logo from '../assets/Logo.png';
 
 function useClickOutside(ref, handler) {
     useEffect(() => {

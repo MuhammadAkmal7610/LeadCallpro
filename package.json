@@ -1,5 +1,5 @@
 {
-  "name": "anylead-crm",
+  "name": "wewave-crm",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -15,9 +15,13 @@
     "@dnd-kit/utilities": "^3.2.2",
     "@headlessui/react": "^2.2.9",
     "@heroicons/react": "^2.2.0",
+    "@supabase/supabase-js": "^2.90.1",
+    "axios": "^1.13.2",
+    "jspdf": "^4.0.0",
     "lenis": "^1.3.16",
     "react": "^19.2.0",
     "react-dom": "^19.2.0",
+    "react-hot-toast": "^2.6.0",
     "react-router-dom": "^7.11.0"
   },
   "devDependencies": {

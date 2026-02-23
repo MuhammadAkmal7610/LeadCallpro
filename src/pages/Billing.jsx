@@ -11,7 +11,7 @@ import {
     XMarkIcon,
     ChevronDownIcon
 } from '@heroicons/react/24/outline';
-import Logo from '../assets/Logo.svg';
+import Logo from '../assets/Logo.png';
 
 const licenses = [
     {
@@ -50,7 +50,7 @@ const LicenseIcon = ({ type }) => {
         return (
             <div className="relative w-12 h-12 shrink-0">
                 <div className="w-12 h-12 rounded-xl flex items-center justify-center overflow-hidden bg-white border border-gray-200 p-2">
-                    <img src={Logo} alt="AnyLead" className="w-full h-full object-contain" />
+                    <img src={Logo} alt="WeWave" className="w-full h-full object-contain" />
                 </div>
                 <div className="absolute -bottom-1 -right-1 bg-green-500 rounded-full p-1 border-2 border-white flex items-center justify-center shadow-sm">
                     <WhatsAppLogo className="w-3 h-3 text-white" />
@@ -61,7 +61,7 @@ const LicenseIcon = ({ type }) => {
     if (type === 'crm') {
         return (
             <div className="w-12 h-12 rounded-xl flex items-center justify-center shrink-0 overflow-hidden bg-white border border-gray-200 shadow-sm p-2">
-                <img src={Logo} alt="AnyLead" className="w-full h-full object-contain" />
+                <img src={Logo} alt="WeWave" className="w-full h-full object-contain" />
             </div>
         );
     }
@@ -73,7 +73,7 @@ const LicenseIcon = ({ type }) => {
                 </div>
                 <div className="absolute -bottom-0 -right-0 bg-white rounded-full p-0.5 border border-gray-100 shadow-sm">
                     <div className="relative w-4 h-4 rounded-full overflow-hidden">
-                        <img src={Logo} alt="AnyLead" className="w-full h-full object-cover" />
+                        <img src={Logo} alt="WeWave" className="w-full h-full object-cover" />
                     </div>
                 </div>
             </div>

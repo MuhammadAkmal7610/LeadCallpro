@@ -58,7 +58,7 @@ export default function UnderConstruction() {
 
                     {/* Footer / Copyright overlay */}
                     <div className="absolute bottom-6 text-xs text-gray-400">
-                        &copy; 2024 AnyLead CRM. All rights reserved.
+                        &copy; 2024 WeWave CRM. All rights reserved.
                     </div>
                 </main>
             </div>

@@ -1,7 +1,7 @@
-# AnyLead CRM - Company Profile
+# WeWave CRM - Company Profile
 
-## About AnyLead
-AnyLead is a comprehensive sales management and telecalling CRM software designed specifically for growing businesses in Pakistan that rely on outbound calling, WhatsApp communication, and systematic follow-ups to drive sales success. We empower sales teams to streamline their entire sales operations, from lead capture to closure, through a unified, intelligent platform that eliminates manual work and maximizes conversion rates.
+## About WeWave
+WeWave is a comprehensive sales management and telecalling CRM software designed specifically for growing businesses in Pakistan that rely on outbound calling, WhatsApp communication, and systematic follow-ups to drive sales success. We empower sales teams to streamline their entire sales operations, from lead capture to closure, through a unified, intelligent platform that eliminates manual work and maximizes conversion rates.
 
 ## Our Mission
 **Sell to Serve** - We believe in enabling businesses to grow the right way by putting customers at the heart of every decision. Our mission is to transform how Pakistani businesses manage their sales operations by providing simple, powerful tools that make selling easier, faster, and more efficient.
@@ -10,7 +10,7 @@ AnyLead is a comprehensive sales management and telecalling CRM software designe
 To make work life enjoyable for sales-driven organizations across Pakistan with well-designed products that simplify their daily operations, eliminate repetitive tasks, and help them focus on what truly matters - building meaningful customer relationships and closing more deals.
 
 ## What We Do
-AnyLead is an all-in-one sales CRM that brings together calling, WhatsApp communication, lead management, and automation in a single, intuitive platform. We help businesses capture every opportunity, nurture every lead, and never miss a follow-up.
+WeWave is an all-in-one sales CRM that brings together calling, WhatsApp communication, lead management, and automation in a single, intuitive platform. We help businesses capture every opportunity, nurture every lead, and never miss a follow-up.
 
 ## Our Core Offering
 **Complete Sales Management Platform that includes:**
@@ -77,7 +77,7 @@ AnyLead is an all-in-one sales CRM that brings together calling, WhatsApp commun
 *   **Agent Performance Reports:** Individual and comparative team analytics
 
 ### 7. Integrations & Connectivity
-AnyLead seamlessly integrates with your existing business tools:
+WeWave seamlessly integrates with your existing business tools:
 *   Facebook & Instagram Lead Ads
 *   Google Ads
 *   Shopify & WooCommerce
@@ -87,7 +87,7 @@ AnyLead seamlessly integrates with your existing business tools:
 *   Custom API integrations
 
 ## Who We Serve
-AnyLead is primarily built for **SMBs (3-100+ team members)** looking for an affordable solution.
+WeWave is primarily built for **SMBs (3-100+ team members)** looking for an affordable solution.
 
 ### Primary Industries
 *   **Real Estate:** Manage property leads, schedule site visits, automate follow-ups
@@ -98,10 +98,10 @@ AnyLead is primarily built for **SMBs (3-100+ team members)** looking for an aff
 *   **E-commerce & Retail:** Order management, customer support, promotional campaigns
 *   **Direct Sales & MLM:** Team management, distributor tracking, commission
 
-## Why Choose AnyLead?
+## Why Choose WeWave?
 
 ### 1. Built for Pakistani Businesses
-Unlike generic international CRMs, AnyLead understands the unique needs of Pakistani sales teams - from WhatsApp-first communication to budget-conscious pricing and local language support.
+Unlike generic international CRMs, WeWave understands the unique needs of Pakistani sales teams - from WhatsApp-first communication to budget-conscious pricing and local language support.
 
 ### 2. Simple Yet Powerful
 *   **No Technical Expertise Required:** Intuitive interface that anyone can use
@@ -109,7 +109,7 @@ Unlike generic international CRMs, AnyLead understands the unique needs of Pakis
 *   **Minimal Training Needed:** Your team can start using it on day one
 
 ### 3. All-in-One Platform
-Stop juggling multiple tools. AnyLead combines everything you need:
+Stop juggling multiple tools. WeWave combines everything you need:
 *   No need for separate dialer software
 *   No need for third-party WhatsApp tools
 *   No need for external reporting systems
@@ -137,7 +137,7 @@ Competitive pricing starting from **PKR 2,400/user/month** (annual plan) with:
 *   **Adaptability:** We evolve with your business needs and stay responsive to market changes.
 *   **Customer-Centricity:** When your customers win, you win - and so do we. Everything we build starts with this principle.
 
-## How AnyLead Works
+## How WeWave Works
 1.  **Step 1: Capture Leads Automatically** - Connect your lead sources and watch leads flow directly into your CRM in real-time.
 2.  **Step 2: Distribute & Assign Instantly** - New leads are automatically assigned to the right team member based on your rules.
 3.  **Step 3: Engage Immediately** - Make calls with 1-click dialer, send WhatsApp messages, and engage while interest is hot.

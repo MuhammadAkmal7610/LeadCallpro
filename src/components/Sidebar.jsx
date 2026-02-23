@@ -10,7 +10,7 @@ import {
     UserGroupIcon, IdentificationIcon, ClipboardDocumentCheckIcon, ChatBubbleLeftRightIcon, // New imports for Filters
     GlobeAltIcon, CursorArrowRaysIcon, ArchiveBoxIcon, Squares2X2Icon, ViewColumnsIcon // New imports for Campaigns
 } from '@heroicons/react/24/outline';
-import Logo from '../assets/Logo.svg';
+import Logo from '../assets/Logo.png';
 
 const navigation = [
 
@@ -37,7 +37,7 @@ export default function Sidebar({ isOpen, setIsOpen }) {
 
                 {/* Logo - Aligned with Header */}
                 <Link to="/" className="h-16 w-full flex items-center justify-center border-b border-gray-200 mb-4 hover:bg-gray-50 transition-colors">
-                    <img src={Logo} alt="AnyLead" className="w-9 h-9 object-contain" />
+                    <img src={Logo} alt="WeWave" className="w-9 h-9 object-contain" />
                 </Link>
 
                 {/* Nav Items */}
@@ -255,8 +255,8 @@ export default function Sidebar({ isOpen, setIsOpen }) {
 
             <div className={`fixed inset-y-0 left-0 z-50 w-72 bg-white shadow-elevation-2 transition-transform duration-300 ease-in-out lg:hidden ${isOpen ? 'translate-x-0' : '-translate-x-full'}`}>
                 <div className="flex bg-white h-16 items-center px-6 border-b border-gray-100">
-                    <img src={Logo} alt="AnyLead" className="w-10 h-10 mr-3" />
-                    <span className="text-xl font-medium text-gray-800">AnyLead</span>
+                    <img src={Logo} alt="WeWave" className="w-10 h-10 mr-3" />
+                    <span className="text-xl font-medium text-gray-800">WeWave</span>
                 </div>
 
                 <nav className="p-4 space-y-1">

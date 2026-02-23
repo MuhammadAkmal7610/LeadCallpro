@@ -3,7 +3,7 @@ import Sidebar from '../components/Sidebar';
 import Header from '../components/Header';
 import ActionCard from '../components/ActionCard';
 import IntegrationCard from '../components/IntegrationCard';
-import Logo from '../assets/Logo.svg';
+import Logo from '../assets/Logo.png';
 import {
     UserPlusIcon, DocumentArrowUpIcon, SignalIcon,
     PresentationChartLineIcon, AdjustmentsHorizontalIcon,
@@ -125,11 +125,11 @@ export default function Home() {
                                 <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-5 overflow-hidden">
                                     <div className="flex gap-4 mb-4">
                                         <div className="w-16 h-16 rounded-lg bg-teal-50 border border-teal-100 flex-shrink-0 flex items-center justify-center overflow-hidden">
-                                            <img src={Logo} alt="AnyLead" className="w-12 h-12 object-contain" />
+                                            <img src={Logo} alt="WeWave" className="w-12 h-12 object-contain" />
                                         </div>
                                         <div className="flex-1 min-w-0">
-                                            <h3 className="font-bold text-gray-900 text-lg leading-tight truncate">AnyLead CRM</h3>
-                                            <p className="text-[#01875f] text-xs font-semibold mt-0.5">AnyLead Inc.</p>
+                                            <h3 className="font-bold text-gray-900 text-lg leading-tight truncate">WeWave CRM</h3>
+                                            <p className="text-[#01875f] text-xs font-semibold mt-0.5">WeWave Inc.</p>
                                             <p className="text-[11px] text-gray-500 mt-0.5">Business</p>
                                         </div>
                                     </div>
